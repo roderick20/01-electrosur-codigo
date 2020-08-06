@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace Electrosur.Helper
 {
+    /*******************************************************************************************
+* PagosVisaWeb
+* Este clase es para encriptar la contraseña
+* Programador: Rodercik Cusirramos Montesinos
+* Fecha de creacion: 22/06/2020
+* Fecha de modificacion: 03/08/2020      
+* *****************************************************************************************/
+
     static public class PasswordHash
     {
         static public string GetMd5Hash(string input)

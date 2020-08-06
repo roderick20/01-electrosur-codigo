@@ -4,6 +4,14 @@ using System.Text;
 
 namespace PagosVisaApi.Helper
 {
+    /*******************************************************************************************
+* PagosVisaWeb
+* Este clase es para encriptacion
+* Programador: Rodercik Cusirramos Montesinos
+* Fecha de creacion: 22/06/2020
+* Fecha de modificacion: 03/08/2020      
+* *****************************************************************************************/
+
     public class Cryptography
     {
         public string Encrypt(String plainText, String key)

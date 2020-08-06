@@ -16,6 +16,13 @@ using WSSielse;
 
 namespace Electrosur.Controllers
 {
+    /*******************************************************************************************
+* PagosVisaWeb
+* Este controlador nos muestra los contratos a pagar como invitado
+* Programador: Rodercik Cusirramos Montesinos
+* Fecha de creacion: 22/06/2020
+* Fecha de modificacion: 03/08/2020      
+* *****************************************************************************************/
 
     [Route("api/[controller]")]
     [ApiController]

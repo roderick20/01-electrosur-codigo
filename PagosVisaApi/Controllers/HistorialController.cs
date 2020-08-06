@@ -12,6 +12,13 @@ using PagosVisaApi.Models;
 
 namespace Electrosur.Controllers
 {
+    /*******************************************************************************************
+* PagosVisaWeb
+* Este controlador es para listar el historial de pago
+* Programador: Rodercik Cusirramos Montesinos
+* Fecha de creacion: 22/06/2020
+* Fecha de modificacion: 03/08/2020      
+* *****************************************************************************************/
 
     [Route("api/[controller]")]
     [ApiController]

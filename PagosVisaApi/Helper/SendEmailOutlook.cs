@@ -9,6 +9,14 @@ using System.Net.Mime;
 
 namespace Electrosur.Helper
 {
+    /*******************************************************************************************
+* PagosVisaWeb
+* Este clase es para enviar email
+* Programador: Rodercik Cusirramos Montesinos
+* Fecha de creacion: 22/06/2020
+* Fecha de modificacion: 03/08/2020      
+* *****************************************************************************************/
+
     public class SendEmailOutlook
     {
         public String ToEmail { get; set; }
@@ -33,8 +41,7 @@ namespace Electrosur.Helper
             {
 
                 var fromAddress = new MailAddress("pagos@electrosur.com.pe", "Electrosur");
-                var toAddress = new MailAddress(ToEmail);//, "To Name");
-                //const string fromPassword = "Aladino?09";
+                var toAddress = new MailAddress(ToEmail);
                 string subject = this.Subject;
 
 
@@ -44,8 +51,7 @@ namespace Electrosur.Helper
                     Port = 25,
                     EnableSsl = false,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false//,
-                    //Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                    UseDefaultCredentials = false
                 };
 
                 String code2 = Guid.NewGuid().ToString();
@@ -58,100 +64,17 @@ namespace Electrosur.Helper
 
                 using (var message = new MailMessage(fromAddress, toAddress)
                 {
-                    Subject = subject//,
-                    //Body = body
+                    Subject = subject
                 })
                 {
                     message.AlternateViews.Add(htmlView);
                     smtp.Send(message);
                 }
-
-
             }
-            catch (Exception ep)
+            catch (Exception ex)
             {
 
-            }
-
-
-            //try
-            //{
-
-            //    var fromAddress = new MailAddress("agile.sendmail@gmail.com", "Electrosur");
-            //    var toAddress = new MailAddress(ToEmail);//, "To Name");
-            //    const string fromPassword = "Aladino?09";
-            //    string subject = this.Subject;
-
-
-            //    var smtp = new SmtpClient
-            //    {
-            //        Host = "smtp.gmail.com",
-            //        Port = 587,
-            //        EnableSsl = true,
-            //        DeliveryMethod = SmtpDeliveryMethod.Network,
-            //        UseDefaultCredentials = false,
-            //        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            //    };
-
-            //    String code2 = Guid.NewGuid().ToString();
-            //    string html = this.Body.Replace("$$CODEIMAGEN$$", code2); ;
-            //    AlternateView htmlView = AlternateView.CreateAlternateViewFromString(html, Encoding.UTF8, MediaTypeNames.Text.Html);
-            //    LinkedResource img = new LinkedResource(WebRootPath + "/images/logo.jpg", MediaTypeNames.Image.Jpeg);
-            //    img.ContentId = code2;
-            //    htmlView.LinkedResources.Add(img);
-
-
-            //    using (var message = new MailMessage(fromAddress, toAddress)
-            //    {
-            //        Subject = subject//,
-            //        //Body = body
-            //    })
-            //    {
-            //        message.AlternateViews.Add(htmlView);
-            //        smtp.Send(message);
-            //    }
-
-
-            //}
-            //catch (Exception ep)
-            //{
-
-            //}
-
-
-            //try
-            //{
-            //    String CorreoEnvio = "@ucsm.edu.pe";
-            //    String CorreoPassword = "";
-
-            //    MailMessage mM = new MailMessage();
-            //    mM.From = new MailAddress(CorreoEnvio, "Electrosur");
-            //    mM.To.Add(this.ToEmail);
-            //    mM.Subject = this.Subject;
-            //    mM.IsBodyHtml = true;
-            //    //mM.Body = this.Body;
-
-            //    String code2 = Guid.NewGuid().ToString();
-
-            //    string html = this.Body.Replace("$$CODEIMAGEN$$", code2); ;
-            //    AlternateView htmlView = AlternateView.CreateAlternateViewFromString(html, Encoding.UTF8, MediaTypeNames.Text.Html);
-            //    LinkedResource img = new LinkedResource(WebRootPath + "/images/logo.jpg", MediaTypeNames.Image.Jpeg);
-            //    img.ContentId = code2;
-            //    htmlView.LinkedResources.Add(img);
-            //    mM.AlternateViews.Add(htmlView);
-
-            //    SmtpClient smtp = new SmtpClient("smtp.office365.com");
-            //    smtp.Port = 587;
-            //    smtp.Credentials = new NetworkCredential(CorreoEnvio, CorreoPassword);
-            //    smtp.EnableSsl = true;
-            //    smtp.Send(mM);
-
-            //    return true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    Error = ex.Message;
-            //}
+            }                      
 
             return false;
         }

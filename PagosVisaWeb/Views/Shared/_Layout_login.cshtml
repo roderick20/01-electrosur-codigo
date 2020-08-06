@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Pasalela de pagos | Electrosur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Somos una empresa pública de derecho privado, cuya actividad principal es la distribución y comercialización de la energía eléctrica en los departamentos de Tacna y Moquegua. " name="description" />
+    <meta content="Electrosur" name="author" />
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="~/css/icons.min.css" rel="stylesheet" />
+    <link href="~/css/app-creative.min.css" rel="stylesheet" />
+
+    <style>
+        .topnav-navbar-dark {
+            background-color: white !important;
+        }
+
+        .topnav {
+            background: #34495e !important;
+        }
+        body[data-layout="topnav"] .content-page {
+            margin-left: 0 !important;
+            padding: 0 0 120px 0;
+        }
+    </style>
+
+</head>
+
+<body data-layout="topnav">
+    <div class="wrapper" style="background-image: url('images/slider-1.png');background-repeat: no-repeat;">
+        <div class="content-page">
+            <div class="content">
+                <div class="navbar-custom topnav-navbar topnav-navbar-dark">
+                    <div class="container-fluid">
+                        <a href="" class="topnav-logo">
+                            <span class="topnav-logo-lg">
+                                <img src="~/images/logo-light.png" alt="" height="32">
+                            </span>
+                            <span class="topnav-logo-sm">
+                                <img src="~/images/logo-light.png" alt="" height="32">
+                            </span>
+                        </a>
+                        <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        </ul>
+                        <a class="navbar-toggle" data-toggle="collapse" data-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="footer" style="background-color:#34495e;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12">
+
+                            Calle Zela #408  <br />
+                            Teléfono: 583315  <br />
+                            correo.electrosur.com.pe <br />
+                            @DateTime.Now.Year Eltrosur S.A.
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            Nuestra App <br />
+
+                            <img src="~/images/button_google.png" class="img-fluid" style="width: 150px;" />
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            Metodos de pago <br />
+                            <img src="~/images/tarjetas_pasarela-2t.png" style="width: 125px;" />
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="text-md-right footer-links d-none d-md-block">
+                                <a href="javascript: void(0);">TACNA (052) 583316</a><br />
+                                <a href="javascript: void(0);">MOQUEGUA (053) 584161</a><br />
+                                <a href="javascript: void(0);">ILO (053) 584162</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="rightbar-overlay"></div>
+    <script src="~/js/vendor.min.js"></script>
+    <script src="~/js/app.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

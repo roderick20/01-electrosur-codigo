@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "PagoSuministro";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-3"> </div>
+    <div class="col-6 ">
+        <div class="card">
+            <div class="card-body">
+
+                @if (ViewBag.Estado == "OK")
+                {
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="mt-3 float-sm">
+                                <p class="font-13"><strong>Fecha de operación: </strong> &nbsp;&nbsp;&nbsp; @ViewBag.Pago.Pagcreado</p>
+                                <p class="font-13"><strong>Número de operación: </strong> @ViewBag.Pago.OpeidOperacion</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table mt-4">
+                                    <thead>
+                                        <tr>
+                                            <th>Descripción</th>
+                                            <th class="text-right">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                @ViewBag.Pago.Pagdescription<br />
+                                                Número de contrato: @ViewBag.Pago.Opesuministro<br />
+                                                Tarjeta: @ViewBag.Pago.Pagbrand  @ViewBag.Pago.Pagcard<br />
+                                                Código de cliente: @ViewBag.Pago.PagcodigoCliente<br />
+                                            </td>
+                                            <td class="text-right">S/ @ViewBag.Pago.Opemonto</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="float-right mt-3 mt-sm-0" style="margin-right: 15px;">
+                                <p><b>Total:</b> <span class="float-right"> S/ @ViewBag.Pago.Opemonto</span></p>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-sm-12">
+                            Se envió un email con la conformidad de pago.
+                        </div>
+                    </div>
+                    <div class="d-print-none mt-4">
+                        <div class="text-right">
+                            <a href="javascript:window.print()" class="btn btn-primary"><i class="mdi mdi-printer"></i> Imprimir</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mt-3 float-sm">
+                                <p class="font-13"><strong>Fecha de operación: </strong> &nbsp;&nbsp;&nbsp; @ViewBag.Pago.Pagcreado</p>
+                                <p class="font-13"><strong>Número de operación: </strong> @ViewBag.Pago.OpeidOperacion</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mt-3 float-sm">
+                                <p class="font-13"><strong>Error </strong> </p>
+                                <p class="font-13"><strong>@ViewBag.Pago.Pagdescription</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div> 
+        </div>
+    </div> 
+</div>
+

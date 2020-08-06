@@ -1,0 +1,7 @@
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.csprojAssemblyReference.cache
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.AssemblyInfoInputs.cache
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.AssemblyInfo.cs
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.csproj.CoreCompileInputs.cache
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.RazorAssemblyInfo.cache
+C:\Users\roder\Documents\GitHub\01-electrosur-web3\Final\PagosVisaApi\obj\Debug\netcoreapp3.1\PagosVisaApi.RazorAssemblyInfo.cs

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<PagosVisaWeb.Models.PdpPagpPago>
+<div class="row" style="margin-top:30px">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Mis pago</h4>
+                <div class="tab-pane show active" id="basic-datatable-preview">
+                    <div class="row">
+                        <div class="col-4">
+                            <form asp-action="MisPagos" id="formLogin">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group mb-3">
+                                    <div class="input-group">
+                                        <input type="text" id="Anyo" name="Anyo" placeholder="Año" class="form-control" />
+                                        <select id="Mes" name="Mes" class="form-control">
+                                            <option value="1">Enero</option>
+                                            <option value="2">Febrero</option>
+                                            <option value="3">Marzo</option>
+                                            <option value="4">Abril</option>
+                                            <option value="5">Mayo</option>
+                                            <option value="6">Junio</option>
+                                            <option value="7">Julio</option>
+                                            <option value="8">Agosto</option>
+                                            <option value="9">Setiembre</option>
+                                            <option value="10">Octubre</option>
+                                            <option value="11">Noviembre</option>
+                                            <option value="12">Diciembre</option>
+                                        </select>
+
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark"><i class="uil uil-search-alt"></i> Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    @if (Model != null) {
+
+                    <table id="tblPagos" class="table dt-responsive nowrap w-100">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Número de contrato
+                                </th>
+                                <th>
+                                    Monto
+                                </th>
+                                <th>
+                                    Suministro
+                                </th>
+                                <th>
+                                    Fecha
+                                </th>
+                                <th>
+                                    Tarjeta
+                                </th>
+                                <th>
+                                    Estado Visa
+                                </th>
+                                <th>
+                                    Estado S. Comercial
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.PagcodigoCliente
+                                    </td>
+                                    <td>
+                                        @item.Opemonto
+                                    </td>
+                                    <td>
+                                        @item.Opesuministro
+                                    </td>
+                                    <td>
+                                        @item.Pagcreado
+                                    </td>
+                                    <td>
+                                        @item.Pagbrand<br />
+                                        @item.Pagcard
+                                    </td>
+                                    <td>
+                                        @item.Pagdescription
+                                    </td>
+                                    <td>
+                                        @item.PAGRespuestaSielse
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <link href="~/DataTables/datatables.css" rel="stylesheet" />
+    <script src="~/DataTables/datatables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#tblPagos').DataTable({
+
+                responsive: true,
+                "language": {
+                    "url": "/DataTables/Spanish.json"
+                }
+            });
+        });
+    </script>
+}

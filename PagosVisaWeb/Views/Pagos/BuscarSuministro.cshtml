@@ -1,0 +1,97 @@
+﻿@{ int cont = 0; }
+<div class="row" style="margin-top:30px">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Recibos pendiente de pago</h4>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <form asp-action="BuscarSuministro" id="formLogin">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group mb-3">
+                                <div class="input-group">
+                                    @{ var codigo_cliente = (ViewBag.codigo_client != null) ? ViewBag.codigo_client : ""; }
+                                    <input type="text" class="form-control" placeholder="Número de contrato"
+                                           aria-label="Código del cliente" name="codigo_cliente"
+                                           value="@codigo_cliente" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-dark"><i class="uil uil-search-alt"></i> Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane show active" id="basic-datatable-preview">
+                    @if (ViewBag.Error != null)
+                    {
+                        <span style="color:red">@ViewBag.Error</span>
+                        <br />
+                    }
+                    @if (ViewBag.Recibos != null)
+                    {
+                        <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                            <thead>
+                                <tr>
+                                    <th>Código Suministro</th>
+                                    <th>Cliente / Dirección</th>
+                                    <th>Fecha Emision</th>
+                                    <th>FechaVencimiento</th>
+                                    <th>Detalle  Consulta</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in (List<PagosVisaWeb.Controllers.Recibos>)ViewBag.Recibos)
+                            {
+                                if (cont == 0)
+                                {
+                                    <tr>
+                                    <td>@item.CodigoSuministro</td>
+                                    <td>@item.NombreCliente <br />@item.DireccionCliente</td>
+                                    <td>@item.FechaEmision.Substring(0, 10)</td>
+
+                                    @if (!String.IsNullOrEmpty(item.FechaVencimiento))
+                                    {
+                                        <td>@item.FechaVencimiento.Substring(0, 10)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>-</td>
+                                    }
+                                    <td>@item.DetalleConsulta</td>
+                                    <td class="text-right">
+                                        <a class="btn btn-primary" href="/PagarVisa/">Pagar S/ @item.MontoAPagarConsulta</a>
+                                    </td>
+                                    </tr> 
+                                    cont++;
+                                    }
+                                    else
+                                    {
+                                    <tr>
+                                        <td>@item.CodigoSuministro</td>
+                                        <td>@item.NombreCliente <br />@item.DireccionCliente</td>
+                                        <td>@item.FechaEmision.Substring(0, 10)</td>
+                                        @if (item.FechaVencimiento != null)
+                                        {
+                                        <td>
+                                        @item.FechaVencimiento.Substring(0, 10)
+                                        </td> 
+                                        }
+                                        else
+                                        {
+                                        <td>-</td>
+                                        }
+                                        <td>@item.DetalleConsulta</td>
+                                        <td class="text-right">S/ @item.MontoAPagarConsulta</td>
+                                    </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

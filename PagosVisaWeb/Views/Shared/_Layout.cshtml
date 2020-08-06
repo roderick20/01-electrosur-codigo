@@ -1,0 +1,145 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pasalela de pagos | Electrosur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Somos una empresa pública de derecho privado, cuya actividad principal es la distribución y comercialización de la energía eléctrica en los departamentos de Tacna y Moquegua. " name="description" />
+    <meta content="Electrosur" name="author" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="~/css/icons.min.css" rel="stylesheet" />
+    <link href="~/css/app-creative.min.css" rel="stylesheet" />
+
+    <style>
+        .topnav-navbar-dark {
+            background-color: white !important;
+        }
+
+        .topnav {
+            background: #34495e !important;
+        }
+
+        body[data-layout="topnav"] .content-page {
+            margin-left: 0 !important;
+            padding: 0 0 120px 0;
+        }
+    </style>
+
+</head>
+
+<body data-layout="topnav">
+    <div class="wrapper">
+        <div class="content-page">
+            <div class="content">
+                <div class="navbar-custom topnav-navbar topnav-navbar-dark">
+                    <div class="container-fluid">
+                        <a href="" class="topnav-logo">
+                            <span class="topnav-logo-lg">
+                                <img src="~/images/logo-light.png" alt="" height="32">
+                            </span>
+                        </a>
+                        <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <span class="account-user-avatar" style="margin-top: 15px;top:0;">
+                                        <i class="uil-user mr-1" style="font-size: 25px;"></i>
+                                    </span>
+                                    <span class="account-user-name" style="margin-top: 7px;">@HttpContextAccessor.HttpContext.Session.GetString("USRNombre")</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
+                                    <a href="/Salir" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-logout mr-1"></i>
+                                        <span>Salir</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="navbar-toggle" data-toggle="collapse" data-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="topnav shadow-sm">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+                            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link " href="/BuscarSuministro" id="topnav-dashboards" role="button">
+                                            <i class="uil-home mr-1"></i> Inicio
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link " href="/MisPagos" id="topnav-dashboards" role="button">
+                                            <i class="uil uil-money-stack"></i> Mis Pagos
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="/ActualizarContrasena" id="topnav-dashboards" role="button">
+                                            <i class="uil-padlock"></i> Cambio de contraseña
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="/Salir" id="topnav-dashboards" role="button">
+                                            <i class=" uil-arrow-left"></i> Salir
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="footer" style="background-color:#34495e;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            Calle Zela #408  <br />
+                            Teléfono: 583315  <br />
+                            correo.electrosur.com.pe <br />
+                            @DateTime.Now.Year Eltrosur S.A.
+                        </div>
+                        <div class="col-md-3">
+                            Nuestra App <br />
+
+                            <img src="~/images/button_google.png" class="img-fluid" style="width: 150px;" />
+                        </div>
+                        <div class="col-md-3">
+                            Metodos de pago <br />
+                            <img src="~/images/tarjetas_pasarela-2t.png" style="width: 125px;" />
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-md-right footer-links d-none d-md-block">
+                                <a href="javascript: void(0);">TACNA (052) 583316</a><br />
+                                <a href="javascript: void(0);">MOQUEGUA (053) 584161</a><br />
+                                <a href="javascript: void(0);">ILO (053) 584162</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="~/js/vendor.min.js"></script>
+    <script src="~/js/app.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

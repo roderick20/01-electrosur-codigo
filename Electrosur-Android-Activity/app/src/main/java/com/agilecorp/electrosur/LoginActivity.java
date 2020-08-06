@@ -31,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TextView email = (TextView)this.findViewById(R.id.tv_email);
+        /*TextView email = (TextView)this.findViewById(R.id.tv_email);
         email.setText("roderick20@hotmail.com");
         TextView password = (TextView)this.findViewById(R.id.tv_password);
-        password.setText("123456");
+        password.setText("123456");*/
 
         ImageView img = (ImageView)this.findViewById(R.id.imgCaptcha);
         Captcha c = new TextCaptcha(300, 115, 4);

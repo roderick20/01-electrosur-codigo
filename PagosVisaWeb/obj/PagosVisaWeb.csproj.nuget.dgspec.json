@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-web3\\Final\\PagosVisaWeb\\PagosVisaWeb.csproj": {}
+    "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaWeb\\PagosVisaWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-web3\\Final\\PagosVisaWeb\\PagosVisaWeb.csproj": {
+    "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaWeb\\PagosVisaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-web3\\Final\\PagosVisaWeb\\PagosVisaWeb.csproj",
+        "projectUniqueName": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaWeb\\PagosVisaWeb.csproj",
         "projectName": "PagosVisaWeb",
-        "projectPath": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-web3\\Final\\PagosVisaWeb\\PagosVisaWeb.csproj",
+        "projectPath": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaWeb\\PagosVisaWeb.csproj",
         "packagesPath": "C:\\Users\\roder\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-web3\\Final\\PagosVisaWeb\\obj\\",
+        "outputPath": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roder\\AppData\\Roaming\\NuGet\\NuGet.Config",

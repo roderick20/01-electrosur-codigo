@@ -39,9 +39,6 @@ public class PagarActivity extends AppCompatActivity {
     private ListView listview;
     private ArrayList<Recibo> recibos = new ArrayList<Recibo>();
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

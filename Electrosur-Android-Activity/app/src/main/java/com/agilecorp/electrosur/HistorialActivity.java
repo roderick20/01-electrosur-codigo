@@ -80,26 +80,17 @@ public class HistorialActivity extends AppCompatActivity {
                         try {
 
                             if (response.getString("estado").equals("OK")) {
-
-
                                 JSONArray jrecibos = response.getJSONArray("recibos");
                                 for (int i = 0; i < jrecibos.length(); i++) {
                                     JSONObject object = jrecibos.getJSONObject(i);
-
                                     Recibo recibo = new Recibo();
-
-
                                     recibo.setCodigoComprobante(object.getString("pagcodigoComprobante"));//
                                     recibo.setCodigoSuministro(object.getString("opesuministro"));//
-                                    //recibo.setNombreCliente(object.getString("nombreCliente"));
-                                    //recibo.setFechaEmision(object.getString("fechaEmision"));
                                     recibo.setPagcreado(object.getString("pagcreado"));//
                                     recibo.setPagbrand(object.getString("pagbrand"));
                                     recibo.setPagcard(object.getString("pagcard"));
                                     recibo.setMontoAPagarConsulta("S/. "+object.getString("opemonto"));//
                                     recibo.setPagdescription(object.getString("pagdescription"));
-                                    //recibo.set(object.getString("purcharseNumber"));
-
                                     recibos.add(recibo);
                                 }
 

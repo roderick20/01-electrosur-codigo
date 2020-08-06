@@ -63,7 +63,6 @@ public class InvitadoActivity extends AppCompatActivity {
                 }
 
                 Singleton.getInstance().setUniqueId(tvNumberDocumento.getText().toString());
-
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("codigocliente", tvNumeroContrato.getText().toString());
@@ -93,7 +92,6 @@ public class InvitadoActivity extends AppCompatActivity {
                                             JSONObject object = jrecibos.getJSONObject(i);
 
                                             Recibo recibo = new Recibo();
-
                                             recibo.setCodigoComprobante(object.getString("codigoComprobante"));
                                             recibo.setCodigoSuministro(object.getString("codigoSuministro"));
                                             recibo.setNombreCliente(object.getString("nombreCliente"));

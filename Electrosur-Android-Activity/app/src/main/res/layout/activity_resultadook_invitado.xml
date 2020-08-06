@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultadoOKInvitadoActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="175dp"
+        android:layout_height="187dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="118dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/ic_check_circle" />
+
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="180dp"
+        android:text="tv_descripcion"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="294dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="60dp"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_descripcion">
+
+        <TableRow android:padding="5dp">
+            <TextView
+                android:id="@+id/tv_transaccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tv_transaccion"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow android:padding="5dp">
+            <TextView
+                android:id="@+id/tv_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tv_fecha"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <TableRow android:padding="5dp">
+            <TextView
+                android:id="@+id/tv_contrato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tv_contrato"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <TableRow android:padding="5dp">
+            <TextView
+                android:id="@+id/tv_recibo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tv_recibo"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow android:padding="5dp">
+            <TextView
+                android:id="@+id/tv_monto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tv_monto"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="153dp"
+        android:background="@drawable/button_ingresar"
+        android:onClick="invitado"
+        android:text="Inicio"
+        android:textColor="@color/enabled_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistorialActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorCeleste"
+            android:onClick="inicio"
+            android:text="@string/btn_inicio"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/btn_pagar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorCeleste"
+            android:onClick="pagar"
+            android:text="@string/btn_pagar"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/btn_historial"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorCeleste"
+            android:text="@string/btn_historial"
+            android:textColor="@android:color/background_light" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorCeleste"
+            android:onClick="cambioContrasena"
+            android:padding="14dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_unlock" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout21"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+
+            android:id="@+id/sp_mes"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:entries="@array/meses_array"
+            android:paddingTop="15dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/tv_anyo"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:hint="Año"
+            android:inputType="numberDecimal"
+            android:paddingTop="15dp"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/btn_buscar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/button_ingresar"
+            android:onClick="buscar"
+            android:text="Buscar"
+            android:textColor="@android:color/background_light" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_historial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

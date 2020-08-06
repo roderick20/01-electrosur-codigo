@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".RegistroActivity">
+
+    <EditText
+        android:id="@+id/tv_numeroDocumento"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Número Documento (*)"
+        android:inputType="textPersonName"
+        android:textColor="@color/visanet_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_tipoDocumento" />
+
+    <Spinner
+        android:id="@+id/sp_tipoDocumento"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:entries="@array/documentos_arrays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/tv_nombres"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Nombres (*)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_numeroDocumento" />
+
+    <EditText
+        android:id="@+id/tv_apellidoPaterno"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Apellido Paterno (*)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombres" />
+
+    <EditText
+        android:id="@+id/tv_apellidoMaterno"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Apellido Materno (*)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apellidoPaterno" />
+
+    <EditText
+        android:id="@+id/tv_correoPrimario"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Correo institucional o principal (*)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apellidoMaterno" />
+
+    <EditText
+        android:id="@+id/tv_correoSecundario"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Correo secundario"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_correoPrimario" />
+
+    <EditText
+        android:id="@+id/tv_numeroTelefono"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Número de télefono o celular (*)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_correoSecundario" />
+
+    <EditText
+        android:id="@+id/tv_contrasena"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/login_text"
+        android:ems="10"
+        android:hint="Contraseña (*)"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_numeroTelefono" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="dialogo"
+        android:text="Terminos y Condiciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_Terminos" />
+
+    <CheckBox
+        android:id="@+id/cb_Terminos"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:text="Estoy de acuerdo con los Terminos y Condiciones"
+        android:textColor="@color/enabled_color"
+        android:textColorHint="@color/enabled_color"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_contrasena" />
+
+    <Button
+        android:id="@+id/btn_registrarse"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/button_ingresar"
+        android:onClick="grabar"
+        android:text="Registrarse"
+        android:textColor="@color/enabled_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow" />
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button">
+
+        <EditText
+            android:id="@+id/tv_captcha"
+            android:layout_width="119dp"
+            android:layout_height="42dp"
+            android:background="@drawable/login_text_captcha"
+            android:ems="10"
+            android:focusable="auto"
+
+            android:hint="Captcha"
+            android:inputType="textEmailAddress" />
+
+        <ImageView
+            android:id="@+id/imgCaptcha"
+            android:layout_width="107dp"
+            android:layout_height="42dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="52dp"
+            android:layout_height="42dp"
+            android:background="@drawable/button_ingresar_captcha"
+            android:onClick="refrescarCaptcha"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_sync_alt_blanco" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="159dp"
+        android:text="Registrarse"
+        android:textColor="@color/enabled_color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        android:text="Campos obligatorios (*)"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+</androidx.constraintlayout.widget.ConstraintLayout>

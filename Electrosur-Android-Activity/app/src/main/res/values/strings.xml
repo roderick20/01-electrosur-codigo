@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Electrosur</string>
+    <string name="btn_inicio">Inicio</string>
+    <string name="btn_pagar">Pagar</string>
+    <string name="btn_historial">Historial</string>
+
+    <string-array name="documentos_arrays">
+        <item>DNI</item>
+        <item>RUC</item>
+        <item>Canet de Extranjeria</item>
+    </string-array>
+    <string-array name="meses_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Setiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+
+</resources>

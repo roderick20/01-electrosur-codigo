@@ -2,7 +2,6 @@ package com.agilecorp.electrosur;
 
 import java.util.List;
 import java.util.Random;
-
 import android.graphics.Bitmap;
 import android.graphics.Color;
 

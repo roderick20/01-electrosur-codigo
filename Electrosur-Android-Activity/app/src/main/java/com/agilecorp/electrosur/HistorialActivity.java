@@ -62,7 +62,6 @@ public class HistorialActivity extends AppCompatActivity {
             case "Diciembre" : mes_numero = 12; break;
         }
 
-
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         Map<String, String> params = new HashMap<String, String>();
         params.put("usruniqueid", Singleton.getInstance().getUniqueId());
@@ -72,7 +71,6 @@ public class HistorialActivity extends AppCompatActivity {
         String url = Singleton.getInstance().getUrl() + "api/historial";
 
         JSONObject jsonObj = new JSONObject(params);
-
         JsonObjectRequest jsonObjRequest = new JsonObjectRequest
                 (Request.Method.POST, url, jsonObj, new Response.Listener<JSONObject>() {
                     @Override

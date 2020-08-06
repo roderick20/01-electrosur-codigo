@@ -1,6 +1,5 @@
 package com.agilecorp.electrosur;
 
-
 import android.util.Base64;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;

@@ -58,6 +58,11 @@ namespace Electrosur.Models
         public string identificadorintidadionsulta { get; set; }
     }
 
+    public class FormRequest
+    {
+        public string d { get; set; }
+    }
+
     public class FormLogin
     {
         public string UserName { get; set; }

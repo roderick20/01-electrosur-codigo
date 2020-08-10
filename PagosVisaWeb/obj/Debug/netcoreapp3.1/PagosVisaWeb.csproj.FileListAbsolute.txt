@@ -411,7 +411,6 @@ C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netc
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\PagosVisaWeb.RazorCoreGenerate.cache
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\ActualizarContrasena.cshtml.g.cs
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\ConfrimacioDeCorreo.cshtml.g.cs
-C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\ErrorPage.cshtml.g.cs
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\Login.cshtml.g.cs
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\RecuperarContrasena.cshtml.g.cs
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\Registro.cshtml.g.cs
@@ -434,3 +433,4 @@ C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netc
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\PagosVisaWeb.dll
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\PagosVisaWeb.pdb
 C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\PagosVisaWeb.genruntimeconfig.cache
+C:\Users\roder\Documents\GitHub\01-electrosur-codigo\PagosVisaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Autenticacion\PaginaNoEncontrada.cshtml.g.cs

@@ -35,33 +35,29 @@ namespace PagosVisaWeb
             var connection = Configuration.GetConnectionString("ElectrosurDB");
             services.AddDbContext<ElectrosurContext>(options => options.UseSqlServer(connection));
 
-            #if (DEBUG)
+#if (DEBUG)
             services.AddControllersWithViews(options =>
             {
                 options.Filters.Add(typeof(AuthenticationFilter));
             }).AddRazorRuntimeCompilation();
-            #else
+#else
             services.AddControllersWithViews(options =>
             {
                 options.Filters.Add(typeof(AuthenticationFilter));
             });
-            #endif
+#endif
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IPrincipal>(provider => provider.GetService<IHttpContextAccessor>()?.HttpContext?.User);
-            
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Autenticacion/Error");
-            }
+
+            app.UseExceptionHandler("/Autenticacion/PaginaNoEncontrada");
+            app.UseStatusCodePagesWithReExecute("/Autenticacion/PaginaNoEncontrada", "?statusCode={0}");
+
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();

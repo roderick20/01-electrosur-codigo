@@ -21,12 +21,13 @@ public class Singleton {
     }
 
     private Singleton() {
-        Url = "https://pagos.electrosur.com.pe/appApi/";
+        //Url = "https://pagos.electrosur.com.pe/appApi/";
+        Url = "http://electrosurapi.agilecorp.net.pe/";
         VisaNet_USERNAME = "integraciones.visanet@necomplus.com";
         VisaNet_VISANET_ENDPOINT_URL = "https://apitestenv.vnforapps.com/";
         VisaNet_PASSWORD = "d5e7nk$M";
         VisaNet_MERCHANT = "100128038";
-        ClaveSecretaMovil = "zxczc2vz3v215fg17";
+        ClaveSecretaMovil = "zxczc2vz3v215fg17zxczc2vz3v215fg17zxczc2vz3v215fg17zxczc2vz3v215fg17zxczc2vz3v215fg17";
     }
 
     public String getUrl() {

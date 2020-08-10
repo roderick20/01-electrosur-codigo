@@ -23,24 +23,21 @@ namespace PagosVisaWeb
             var path = context.HttpContext.Request.Path;
 
             List<String> path_anonymus = new List<string>();
-            path_anonymus.Add("/");
             path_anonymus.Add("/Login");
             path_anonymus.Add("/Salir");
             path_anonymus.Add("/RecuperarContrasena");
             path_anonymus.Add("/Registro");
             path_anonymus.Add("/confirmar");
-            path_anonymus.Add("/Error/404");
-            path_anonymus.Add("get-captcha-image");
-            path_anonymus.Add("{/get-captcha-image}");
+            path_anonymus.Add("/Autenticacion/PaginaNoEncontrada");
+            path_anonymus.Add("/get-captcha-image");
 
-            String anonymus = path_anonymus.Where(m => m.Equals(path) || m.Contains(path)).FirstOrDefault();
+            String anonymus = path_anonymus.Where(m => m.Equals(path)).FirstOrDefault();
             if (anonymus == null)
             {
                 if (String.IsNullOrEmpty(context.HttpContext.Session.GetString("USRidUsuario")))
                 {
-                    
-                    context.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Autenticacion", action = "Login" }));
-                    context.Result.ExecuteResultAsync(context);
+                    context.Result = new RedirectToRouteResult(
+                                new RouteValueDictionary(new { controller = "Autenticacion", action = "Login" }));
                 }
             } 
         }

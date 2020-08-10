@@ -45,6 +45,7 @@ namespace PagosVisaWeb.Controllers
         }
 
         [Route("/BuscarSuministro")]
+        
         public ActionResult BuscarSuministro() => View();
 
         /// <summary>

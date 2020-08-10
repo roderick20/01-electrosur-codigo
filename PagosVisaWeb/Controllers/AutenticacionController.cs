@@ -39,11 +39,32 @@ namespace PagosVisaWeb.Controllers
             HttpContext.Session.SetString("USRidUsuario", "");
             HttpContext.Session.SetString("USRNombre", "");
             HttpContext.Session.SetString("UsruniqueId", "");
-            return Redirect("/");
+            HttpContext.Session.Clear();
+            return Redirect("/Login");
         }
 
         [Route("/")]
+        [Route("Login")]
         public IActionResult Login() => View();
+
+        //[Route("/Error")]
+        public IActionResult PaginaNoEncontrada(int? statusCode)
+        {
+            if (statusCode.HasValue)
+            {
+                if (statusCode == 404)
+                {
+                    ViewBag.Mensaje = "Página no encontrada";
+                }
+
+                if (statusCode == 500)
+                {
+                    ViewBag.Mensaje = "Comuníquese con el administrador";
+                }
+            }
+
+                        return View();
+        }
 
         /// <summary>
         /// Vista Login 

@@ -56,21 +56,34 @@ public class PagarActivity extends AppCompatActivity {
                     return;
                 }
 
-
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+
+                JSONObject jsonObject = new JSONObject();
+                String jsonString = "";
+
+                Crypto cryto = new Crypto();
+                try {
+                    jsonObject.put("codigocliente", tvNumeroContrato.getText().toString());
+                    jsonObject.put("usruniqueid", Singleton.getInstance().getUniqueId());
+                    jsonString = jsonObject.toString();
+                    jsonString = cryto.encrypt(jsonString, Singleton.getInstance().getClaveSecretaMovil());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("codigocliente", tvNumeroContrato.getText().toString());
-                params.put("usruniqueid", Singleton.getInstance().getUniqueId());
+                params.put("d", jsonString);
                 String url = Singleton.getInstance().getUrl() + "api/Pagos";
 
-                JSONObject jsonObj = new JSONObject(params);
+                JSONObject paramsJsonObject = new JSONObject(params);
                 recibos = new ArrayList<Recibo>();
 
                 ListItemPagos myAdapter = new ListItemPagos(getApplicationContext(), R.layout.list_item_pagos, recibos);
                 listview.setAdapter(myAdapter);
 
                 JsonObjectRequest jsonObjRequest = new JsonObjectRequest
-                        (Request.Method.POST, url, jsonObj, new Response.Listener<JSONObject>() {
+                        (Request.Method.POST, url, paramsJsonObject, new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {

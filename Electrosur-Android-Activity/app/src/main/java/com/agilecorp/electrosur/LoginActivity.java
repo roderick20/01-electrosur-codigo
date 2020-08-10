@@ -31,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        /*TextView email = (TextView)this.findViewById(R.id.tv_email);
-        email.setText("roderick20@hotmail.com");
+        TextView email = (TextView)this.findViewById(R.id.tv_email);
+        email.setText("roderick.cusirramos@gmail.com");
         TextView password = (TextView)this.findViewById(R.id.tv_password);
-        password.setText("123456");*/
+        password.setText("123456");
 
         ImageView img = (ImageView)this.findViewById(R.id.imgCaptcha);
         Captcha c = new TextCaptcha(300, 115, 4);
@@ -75,14 +75,25 @@ public class LoginActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = Singleton.getInstance().getUrl()+"api/login";
 
+        JSONObject jsonObject = new JSONObject();
+        String jsonString = "";
+
+        Crypto cryto = new Crypto();
+        try {
+            jsonObject.put("UserName", email.getText().toString());
+            jsonObject.put("Password", password.getText().toString());
+            jsonString = jsonObject.toString();
+            jsonString = cryto.encrypt(jsonString, Singleton.getInstance().getClaveSecretaMovil());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         Map<String, String> params = new HashMap<String, String>();
-        params.put("UserName", email.getText().toString());
-        params.put("Password", password.getText().toString());
+        params.put("d", jsonString);
 
         Singleton.getInstance().setEmail(email.getText().toString());
 
         JSONObject jsonObj = new JSONObject(params);
-
         JsonObjectRequest jsonObjRequest = new JsonObjectRequest
                 (Request.Method.POST, url, jsonObj, new Response.Listener<JSONObject>() {
                     @Override
@@ -90,9 +101,13 @@ public class LoginActivity extends AppCompatActivity {
                         try {
 
                             if(response.getString("estado").equals("OK")){
-                                Singleton.getInstance().setToken(response.getString("token"));
-                                Singleton.getInstance().setName(response.getString("usrNombre"));
-                                Singleton.getInstance().setUniqueId(response.getString("usruniqueId"));
+                                Crypto cryto = new Crypto();
+                                String jsonString = cryto.decrypt(response.getString("d"), Singleton.getInstance().getClaveSecretaMovil());
+                                JSONObject jsonObject = new JSONObject(jsonString);
+
+                                Singleton.getInstance().setToken(jsonObject.getString("Token"));
+                                Singleton.getInstance().setName(jsonObject.getString("USRNombre"));
+                                Singleton.getInstance().setUniqueId(jsonObject.getString("UsruniqueId"));
 
                                 startActivity(intent);
                             }

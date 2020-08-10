@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Text.Json;
 using WSSielse;
 
 
@@ -41,8 +42,13 @@ namespace Electrosur.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index([FromBody] FormPagos pago)
+        public IActionResult Index([FromBody] FormRequest d)
         {
+
+            Cryptography crypto = new Cryptography();
+            String jsonString = crypto.Decrypt(d.d, _configuration["ClaveSecretaMovil"]);
+            FormPagos pago = JsonSerializer.Deserialize<FormPagos>(jsonString);
+
             IActionResult response = Unauthorized();
             List<Recibos> recibos = new List<Recibos>();
             var gUsruniqueId = new Guid(pago.usruniqueid);

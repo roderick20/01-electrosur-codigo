@@ -21,6 +21,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#29487d"
+            android:onClick="inicio"
             android:text="@string/btn_inicio"
             android:textColor="@android:color/background_light" />
 

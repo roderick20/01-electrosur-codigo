@@ -42,6 +42,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/colorCeleste"
+            android:onClick="historial"
             android:text="@string/btn_historial"
             android:textColor="@android:color/background_light" />
 

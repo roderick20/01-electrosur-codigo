@@ -11,6 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="48dp"
 
+        android:onClick="cambioContrasena"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/colorCeleste"
+            android:onClick="historial"
             android:text="@string/btn_historial"
             android:textColor="@android:color/background_light" />
 

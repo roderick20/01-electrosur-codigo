@@ -140,8 +140,5 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void invitado(View view) {
-        final Intent intent = new Intent(this, InvitadoActivity.class);
-        startActivity(intent);
-    }
+
 }

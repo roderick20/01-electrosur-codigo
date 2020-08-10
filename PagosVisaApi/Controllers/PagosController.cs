@@ -89,7 +89,7 @@ namespace Electrosur.Controllers
                     _context.Add(operacion);
                     _context.SaveChanges();
 
-                    Cryptography crypto = new Cryptography();
+                    //Cryptography crypto = new Cryptography();
 
 
                     if (clsConsultaDeudaRespuesta.DetalleConsulta.Equals("Recibo de Energía") ||

@@ -99,7 +99,7 @@ namespace Electrosur.Controllers
                 response = Ok(new
                 {
                     Estado = "Error",
-                    Mensaje = ex.Message,
+                    Mensaje = ex.Message 
                 });
             }
             return response;

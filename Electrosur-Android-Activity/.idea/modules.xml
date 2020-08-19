@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Electrosur.iml" filepath="$PROJECT_DIR$/.idea/modules/Electrosur.iml" group="Electrosur" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TrustDefender-5.0-96/TrustDefender-5.0-96.iml" filepath="$PROJECT_DIR$/.idea/modules/TrustDefender-5.0-96/TrustDefender-5.0-96.iml" group="Electrosur/TrustDefender-5.0-96" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Electrosur/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/visanet-lib-lite-v2.1.0/visanet-lib-lite-v2.1.0.iml" filepath="$PROJECT_DIR$/.idea/modules/visanet-lib-lite-v2.1.0/visanet-lib-lite-v2.1.0.iml" group="Electrosur/visanet-lib-lite-v2.1.0" />
+    </modules>
+  </component>
+</project>

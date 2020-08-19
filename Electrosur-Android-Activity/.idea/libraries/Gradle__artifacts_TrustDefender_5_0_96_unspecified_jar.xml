@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:TrustDefender-5.0-96:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TrustDefender-5.0-96/build/.transforms/d63afc07408d5eb8b3e666d955cc0606/jetified-TrustDefender-5.0-96/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/TrustDefender-5.0-96/build/.transforms/d63afc07408d5eb8b3e666d955cc0606/jetified-TrustDefender-5.0-96/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaApi\\PagosVisaApi.csproj": {}
+    "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaApi\\PagosVisaApi.csproj": {
+    "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaApi\\PagosVisaApi.csproj",
+        "projectUniqueName": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
         "projectName": "PagosVisaApi",
-        "projectPath": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaApi\\PagosVisaApi.csproj",
+        "projectPath": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
         "packagesPath": "C:\\Users\\roder\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\roder\\Documents\\GitHub\\01-electrosur-codigo\\PagosVisaApi\\obj\\",
+        "outputPath": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roder\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

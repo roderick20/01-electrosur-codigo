@@ -16,7 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5abf85de-8f20-4ea2-8fdc-c3b27bd0c165" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 06 Informe Tecnico Aplicacion Android.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 06 Informe Tecnico Aplicacion Android.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6. Ficha de pruebas Funcionales - Comercial/GIS01952S3.01.02.02.FO1 (1).doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 01 Requerimientos.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 01 Requerimientos.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 03 Manual de usuario aplicacion Web.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 03 Manual de usuario aplicacion Web.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 04 Instalacion y configuracion.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/10.7 04 Instalacion y configuracion.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../7. Documentacion de requerimientos, arquitectura, manual de usuario,manual de instalacion,instalacion y configuracion,modelo db/Plan de pruebas.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../8. Guia para publicacion en App Store_recursos/~$.8 Guia para publicacion en App Store.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,11 +284,11 @@
     </state>
     <state x="-1508" y="92" width="1416" height="676" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824/-1600.0.1600.860@-1600.0.1600.860" timestamp="1596640452960" />
     <state x="88" y="88" width="1360" height="648" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824/-1600.0.1600.860@0.0.1536.824" timestamp="1599053213763" />
-    <state x="653" y="468" key="com.intellij.ide.util.TipDialog" timestamp="1599054971304">
+    <state x="653" y="468" key="com.intellij.ide.util.TipDialog" timestamp="1602546756781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="653" y="468" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1600.0.1600.860@-1600.0.1600.860" timestamp="1597117867449" />
-    <state x="653" y="468" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1600.0.1600.860@0.0.1536.824" timestamp="1599054971304" />
+    <state x="653" y="468" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1600.0.1600.860@0.0.1536.824" timestamp="1602546756781" />
     <state x="653" y="468" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595598399714" />
     <state x="457" y="259" width="705" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1595017377793">
       <screen x="0" y="0" width="1536" height="824" />

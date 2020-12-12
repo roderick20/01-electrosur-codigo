@@ -1,7 +1,6 @@
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\appsettings.Development.json
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\appsettings.json
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\Connected Services\WSSielse\ConnectedService.json
-C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\Properties\launchSettings.json
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\PagosVisaWeb.exe
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\PagosVisaWeb.deps.json
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\bin\Release\netcoreapp3.1\PagosVisaWeb.runtimeconfig.json
@@ -434,3 +433,4 @@ C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\obj\Release\netcoreapp3.1\
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\obj\Release\netcoreapp3.1\PagosVisaWeb.dll
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\obj\Release\netcoreapp3.1\PagosVisaWeb.pdb
 C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\obj\Release\netcoreapp3.1\PagosVisaWeb.genruntimeconfig.cache
+C:\01-electrosur-codigo\9. Codigo fuente\PagosVisaWeb\obj\Release\netcoreapp3.1\scopedcss\bundle\PagosVisaWeb.styles.css

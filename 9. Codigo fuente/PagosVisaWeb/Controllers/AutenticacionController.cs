@@ -7,6 +7,8 @@ using PagosVisaWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.RegularExpressions;
+using System.Text;
 
 namespace PagosVisaWeb.Controllers
 {
@@ -195,8 +197,10 @@ namespace PagosVisaWeb.Controllers
 
                     if (usuario != null)
                     {
-                        var captchaCodeGenerado = Captcha.GenerateCaptchaCode();
-                        usuario.Usrcontrasena = PasswordHash.GetMd5Hash(captchaCodeGenerado);
+                        //var captchaCodeGenerado = Captcha.GenerateCaptchaCode();
+
+                        var Usrcontrasena = CreatePassword();// PasswordHash.GetMd5Hash(captchaCodeGenerado);
+                        usuario.Usrcontrasena = PasswordHash.GetMd5Hash(Usrcontrasena);
                         usuario.Usrmodificado = DateTime.Now;
                         usuario.UsrultimoAcceso = DateTime.Now;
                         _context.Update(usuario);
@@ -206,7 +210,9 @@ namespace PagosVisaWeb.Controllers
 
                         var path = _env.WebRootPath + "/plantilla_email/recuperarcontrasena_email.html";
                         String fileContents = System.IO.File.ReadAllText(path);
-                        fileContents = fileContents.Replace("$$NuevaContrasena$$", captchaCodeGenerado);
+                        fileContents = fileContents.Replace("$$NuevaContrasena$$", Usrcontrasena);
+
+                        
 
                         SendEmailOutlook email_obj = new SendEmailOutlook(usuario.UsrcorreoPrimario, "Recuperar contraseña", fileContents, _env.WebRootPath);
                         email_obj.Send();
@@ -247,6 +253,13 @@ namespace PagosVisaWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ActualizarContrasena(String password)
         {
+            String ErrorMessage = "";
+            if(!ValidatePassword( password,out ErrorMessage)){
+                ModelState.AddModelError(string.Empty, ErrorMessage);
+                return View();
+            }
+
+
             long id = Convert.ToInt64(HttpContext.Session.GetString("USRidUsuario"));
 
             var user = _context.PdpUsrtUsuarioDelSistema.Find(id);
@@ -255,6 +268,54 @@ namespace PagosVisaWeb.Controllers
             _context.Update(user);
             _context.SaveChanges();
             return RedirectToAction("BuscarSuministro", "Pagos");
+        }
+
+        private bool ValidatePassword(string password, out string ErrorMessage)
+        {
+            var input = password;
+            ErrorMessage = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new Exception("La contraseña no debe estar vacía");
+            }
+
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMiniMaxChars = new Regex(@".{8,15}");
+            var hasLowerChar = new Regex(@"[a-z]+");
+            var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
+
+            if (!hasLowerChar.IsMatch(input))
+            {
+                ErrorMessage = "La contraseña debe contener al menos una letra minúscula.";
+                return false;
+            }
+            else if (!hasUpperChar.IsMatch(input))
+            {
+                ErrorMessage = "La contraseña debe contener al menos una letra mayúscula.";
+                return false;
+            }
+            else if (!hasMiniMaxChars.IsMatch(input))
+            {
+                ErrorMessage = "La contraseña no debe tener menos de 8 ni más de 15 caracteres.";
+                return false;
+            }
+            else if (!hasNumber.IsMatch(input))
+            {
+                ErrorMessage = "La contraseña debe contener al menos un valor numérico.";
+                return false;
+            }
+
+            else if (!hasSymbols.IsMatch(input))
+            {
+                ErrorMessage = "La contraseña debe contener al menos un carácter especial (!@#$%^&*()_+=\\[{\\]};:<>|./?,-).";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 
@@ -273,6 +334,13 @@ namespace PagosVisaWeb.Controllers
             try {
 
                 if (CaptchaCode == HttpContext.Session.GetString("CaptchaCode")) {
+
+                    String ErrorMessage = "";
+                    if (!ValidatePassword(pdpUsrtUsuarioDelSistema.Usrcontrasena, out ErrorMessage))
+                    {
+                        ModelState.AddModelError(string.Empty, ErrorMessage);
+                        return View(pdpUsrtUsuarioDelSistema);
+                    }
 
                     var usuariorepetido = _context.PdpUsrtUsuarioDelSistema.Where(m => m.UsrnumeroDocumento == pdpUsrtUsuarioDelSistema.UsrnumeroDocumento ||
                     m.UsrcorreoPrimario == pdpUsrtUsuarioDelSistema.UsrcorreoPrimario).FirstOrDefault();
@@ -300,6 +368,8 @@ namespace PagosVisaWeb.Controllers
                     pdpUsrtUsuarioDelSistema.Usrestado = true;
                     pdpUsrtUsuarioDelSistema.UsrconfirmacionCorreo = false;
                     pdpUsrtUsuarioDelSistema.UsrrecuperarContrasena = false;
+                    
+                    
 
                     if (String.IsNullOrEmpty(pdpUsrtUsuarioDelSistema.UsrcorreoSecundario))                   
                         pdpUsrtUsuarioDelSistema.UsrcorreoSecundario = "-";
@@ -330,6 +400,18 @@ namespace PagosVisaWeb.Controllers
             return View(pdpUsrtUsuarioDelSistema);
         }
 
+
+        public string CreatePassword(int length = 8)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+=\\[{\\]};:<>|./?,-";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
+        }
         [Route("error/{errorCode}")]
         public IActionResult ErrorPage(int errorCode)
         {

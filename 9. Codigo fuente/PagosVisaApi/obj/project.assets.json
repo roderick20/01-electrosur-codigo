@@ -9285,11 +9285,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
+      "projectUniqueName": "D:\\GitHub\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
       "projectName": "PagosVisaApi",
-      "projectPath": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
+      "projectPath": "D:\\GitHub\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
       "packagesPath": "C:\\Users\\roder\\.nuget\\packages\\",
-      "outputPath": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\obj\\",
+      "outputPath": "D:\\GitHub\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\roder\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9375,7 +9375,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

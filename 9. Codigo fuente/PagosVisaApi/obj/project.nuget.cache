@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gZLRvaN+tYG15O/kcTqVJYoOGITPZk1CED9hXZJdmLthOdX2JfUsBFiBgaq1DTQYw3PRyO2xHIQoQqFw+RxJcg==",
+  "dgSpecHash": "ohfDMKeqVzaGIpW8MLJV2MJyt3dSkXLl0jrtMrSviVWDln8c847GIsNaOvvsxVo1YqmblDSWw7cNr05jrXHUeQ==",
   "success": true,
-  "projectFilePath": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
+  "projectFilePath": "D:\\GitHub\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaApi\\PagosVisaApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roder\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.5\\microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",
     "C:\\Users\\roder\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

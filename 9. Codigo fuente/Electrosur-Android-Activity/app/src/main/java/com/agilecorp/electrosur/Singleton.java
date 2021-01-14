@@ -21,7 +21,7 @@ public class Singleton {
     }
 
     private Singleton() {
-        Url = "https://pagos.electrosur.com.pe/appApi/";
+        Url = "https://app_prueba.electrosur.com.pe:4333/appapi/";
         //Url = "http://electrosurapi.agilecorp.net.pe/";
         VisaNet_USERNAME = "integraciones.visanet@necomplus.com";
         VisaNet_VISANET_ENDPOINT_URL = "https://apitestenv.vnforapps.com/";

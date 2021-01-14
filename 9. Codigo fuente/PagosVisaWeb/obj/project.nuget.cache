@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EC72nCQOhpFDT7A6DzKczODms7HmkKGyp+Vl9q07aKKYCS5SDrRIAX/j4jrh9fqDSc1fDffZF5Q/+tCa4mrZFg==",
+  "dgSpecHash": "OimGeBQYM6eP9dAyx9oLOBPg9fqcJ1lWvmb75vwddA1Ue11OGp+xTGox/NKKb3F8FIth+sjrxSAbA+SaeDSV6A==",
   "success": true,
-  "projectFilePath": "C:\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaWeb\\PagosVisaWeb.csproj",
+  "projectFilePath": "D:\\GitHub\\01-electrosur-codigo\\9. Codigo fuente\\PagosVisaWeb\\PagosVisaWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roder\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\roder\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.6\\microsoft.aspnetcore.mvc.razor.extensions.3.1.6.nupkg.sha512",

@@ -17,7 +17,7 @@ namespace PagosVisaWeb.Controllers
      * Este controlador lo usamos para todo lo es autenticación.
      * Programador: Rodercik Cusirramos Montesinos
      * Fecha de creacion: 22/06/2020
-     * Fecha de modificacion: 03/08/2020      
+     * Fecha de modificacion: 13/01/2021      
      * *****************************************************************************************/
 
     public class AutenticacionController : Controller
@@ -65,7 +65,7 @@ namespace PagosVisaWeb.Controllers
                 }
             }
 
-                        return View();
+            return View();
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace PagosVisaWeb.Controllers
                         {
                             HttpContext.Session.SetString("USRidUsuario", usuario.UsridUsuario.ToString());
                             HttpContext.Session.SetString("USRCorreoPrimario", usuario.UsrcorreoPrimario);
-                            HttpContext.Session.SetString("USRNombre", usuario.Usrnombre +" " + usuario.UsrapellidoPaterno + " " + usuario.UsrapellidoMaterno);
+                            HttpContext.Session.SetString("USRNombre", usuario.Usrnombre + " " + usuario.UsrapellidoPaterno + " " + usuario.UsrapellidoMaterno);
                             HttpContext.Session.SetString("UsruniqueId", usuario.UsruniqueId.ToString());
                             return Redirect("/BuscarSuministro");
                         }
@@ -197,8 +197,6 @@ namespace PagosVisaWeb.Controllers
 
                     if (usuario != null)
                     {
-                        //var captchaCodeGenerado = Captcha.GenerateCaptchaCode();
-
                         var Usrcontrasena = CreatePassword();// PasswordHash.GetMd5Hash(captchaCodeGenerado);
                         usuario.Usrcontrasena = PasswordHash.GetMd5Hash(Usrcontrasena);
                         usuario.Usrmodificado = DateTime.Now;
@@ -206,13 +204,11 @@ namespace PagosVisaWeb.Controllers
                         _context.Update(usuario);
                         _context.SaveChanges();
 
-                        
+
 
                         var path = _env.WebRootPath + "/plantilla_email/recuperarcontrasena_email.html";
                         String fileContents = System.IO.File.ReadAllText(path);
                         fileContents = fileContents.Replace("$$NuevaContrasena$$", Usrcontrasena);
-
-                        
 
                         SendEmailOutlook email_obj = new SendEmailOutlook(usuario.UsrcorreoPrimario, "Recuperar contraseña", fileContents, _env.WebRootPath);
                         email_obj.Send();
@@ -254,11 +250,11 @@ namespace PagosVisaWeb.Controllers
         public IActionResult ActualizarContrasena(String password)
         {
             String ErrorMessage = "";
-            if(!ValidatePassword( password,out ErrorMessage)){
+            if (!ValidatePassword(password, out ErrorMessage))
+            {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
                 return View();
             }
-
 
             long id = Convert.ToInt64(HttpContext.Session.GetString("USRidUsuario"));
 
@@ -331,9 +327,11 @@ namespace PagosVisaWeb.Controllers
         [Route("Registro")]
         public async Task<IActionResult> Registro([Bind("UsrtipoDocumento,UsrnumeroDocumento,Usrnombre,UsrapellidoPaterno,UsrapellidoMaterno,UsrcorreoPrimario,UsrcorreoSecundario,Usrtelefono,Usrcontrasena")] PdpUsrtUsuarioDelSistema pdpUsrtUsuarioDelSistema, String CaptchaCode)
         {
-            try {
+            try
+            {
 
-                if (CaptchaCode == HttpContext.Session.GetString("CaptchaCode")) {
+                if (CaptchaCode == HttpContext.Session.GetString("CaptchaCode"))
+                {
 
                     String ErrorMessage = "";
                     if (!ValidatePassword(pdpUsrtUsuarioDelSistema.Usrcontrasena, out ErrorMessage))
@@ -368,12 +366,12 @@ namespace PagosVisaWeb.Controllers
                     pdpUsrtUsuarioDelSistema.Usrestado = true;
                     pdpUsrtUsuarioDelSistema.UsrconfirmacionCorreo = false;
                     pdpUsrtUsuarioDelSistema.UsrrecuperarContrasena = false;
-                    
-                    
 
-                    if (String.IsNullOrEmpty(pdpUsrtUsuarioDelSistema.UsrcorreoSecundario))                   
+
+
+                    if (String.IsNullOrEmpty(pdpUsrtUsuarioDelSistema.UsrcorreoSecundario))
                         pdpUsrtUsuarioDelSistema.UsrcorreoSecundario = "-";
-                    
+
 
                     _context.Add(pdpUsrtUsuarioDelSistema);
                     await _context.SaveChangesAsync();
@@ -400,7 +398,6 @@ namespace PagosVisaWeb.Controllers
             return View(pdpUsrtUsuarioDelSistema);
         }
 
-
         public string CreatePassword(int length = 8)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+=\\[{\\]};:<>|./?,-";
@@ -412,10 +409,11 @@ namespace PagosVisaWeb.Controllers
             }
             return res.ToString();
         }
+
         [Route("error/{errorCode}")]
         public IActionResult ErrorPage(int errorCode)
         {
             return View();
-        }       
+        }
     }
 }

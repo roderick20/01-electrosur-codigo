@@ -45,7 +45,7 @@ namespace PagosVisaWeb.Helper
                 string subject = this.Subject;
                 var smtp = new SmtpClient
                 {
-                    Host = "191.168.5.205",
+                    Host = "correo.electrosur.com.pe",
                     Port = 25,
                     EnableSsl = false,
                     DeliveryMethod = SmtpDeliveryMethod.Network,

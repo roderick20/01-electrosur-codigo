@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         TextView email = (TextView)this.findViewById(R.id.tv_email);
         email.setText("roderick20@hotmail.com");
         TextView password = (TextView)this.findViewById(R.id.tv_password);
-        password.setText("7MX3");
+        password.setText("V2G7");
 
         ImageView img = (ImageView)this.findViewById(R.id.imgCaptcha);
         Captcha c = new TextCaptcha(300, 115, 4);
@@ -72,17 +72,6 @@ public class LoginActivity extends AppCompatActivity {
         img.setImageBitmap(c.image);
         this.captchaValor = c.answer;
     }
-
-    /*private SSLSocketFactory pinnedSSLSocketFactory() {
-        try {
-            return new TLSSocketFactory(PUBLIC_KEY);
-        } catch (KeyManagementException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
 
     public void login(View view) {
         final Intent intent = new Intent(this, MainActivity.class);
@@ -106,24 +95,36 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-
-        /*RequestQueue queue = null;
+        CertificateFactory cf = null;
         try {
-            queue = getPinnedRequestQueue();
-        } catch (CertificateException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (KeyStoreException e) {
-            e.printStackTrace();
-        } catch (KeyManagementException e) {
-            e.printStackTrace();
-        } catch (java.security.cert.CertificateException e) {
-            e.printStackTrace();
-        }*/
-        RequestQueue queue = Volley.newRequestQueue(this);
+            cf = CertificateFactory.getInstance("X.509");
+
+            // Generate the certificate using the certificate file under res/raw/cert.cer
+            InputStream caInput = new BufferedInputStream(getResources().openRawResource(R.raw.cet));
+            Certificate ca = cf.generateCertificate(caInput);
+            caInput.close();
+
+            // Create a KeyStore containing our trusted CAs
+            String keyStoreType = KeyStore.getDefaultType();
+            KeyStore trusted = KeyStore.getInstance(keyStoreType);
+            trusted.load(null, null);
+            trusted.setCertificateEntry("ca", ca);
+
+            // Create a TrustManager that trusts the CAs in our KeyStore
+            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+            tmf.init(trusted);
+
+            // Create an SSLContext that uses our TrustManager
+            SSLContext context = SSLContext.getInstance("TLS");
+            context.init(null, tmf.getTrustManagers(), null);
+
+            SSLSocketFactory sf = context.getSocketFactory();
+
+//------------------------------------------------------------------------------------------
+            RequestQueue queue = Volley.newRequestQueue(this, new HurlStack(null, sf));
+
+        //RequestQueue queue = Volley.newRequestQueue(this);
         String url = Singleton.getInstance().getUrl()+"api/login";
 
         JSONObject jsonObject = new JSONObject();
@@ -141,7 +142,6 @@ public class LoginActivity extends AppCompatActivity {
 
         Map<String, String> params = new HashMap<String, String>();
         params.put("d", jsonString);
-
         Singleton.getInstance().setEmail(email.getText().toString());
 
         JSONObject jsonObj = new JSONObject(params);
@@ -150,23 +150,18 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-
                             if(response.getString("estado").equals("OK")){
                                 Crypto cryto = new Crypto();
                                 String jsonString = cryto.decrypt(response.getString("d"), Singleton.getInstance().getClaveSecretaMovil());
                                 JSONObject jsonObject = new JSONObject(jsonString);
-
                                 Singleton.getInstance().setToken(jsonObject.getString("Token"));
                                 Singleton.getInstance().setName(jsonObject.getString("USRNombre"));
                                 Singleton.getInstance().setUniqueId(jsonObject.getString("UsruniqueId"));
-
                                 startActivity(intent);
                             }
                             else{
                                 Toast.makeText(getApplicationContext(), response.getString("mensaje"), Toast.LENGTH_SHORT).show();
                             }
-
-
                         } catch (JSONException e) {
                             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -178,63 +173,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
-        queue.add(jsonObjRequest);
+
+            queue.add(jsonObjRequest);
+        } catch (IOException | KeyStoreException | NoSuchAlgorithmException | KeyManagementException | java.security.cert.CertificateException e) {
+            e.printStackTrace();
+        }
     }
 
-    private RequestQueue getPinnedRequestQueue() throws CertificateException, IOException, NoSuchAlgorithmException,
-            KeyStoreException, KeyManagementException, java.security.cert.CertificateException {
-
-        CertificateFactory cf = CertificateFactory.getInstance("X.509");
-
-        // Generate the certificate using the certificate file under res/raw/cert.cer
-        InputStream caInput = new BufferedInputStream(getApplicationContext().getResources().openRawResource(R.raw.cert_app_prueba));
-        final Certificate ca = cf.generateCertificate(caInput);
-        caInput.close();
-
-        // Create a KeyStore containing our trusted CAs
-        String keyStoreType = KeyStore.getDefaultType();
-        KeyStore trusted = KeyStore.getInstance(keyStoreType);
-        trusted.load(null, null);
-        trusted.setCertificateEntry("ca", ca);
-
-        // Create a TrustManager that trusts the CAs in our KeyStore
-        String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
-        TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
-        tmf.init(trusted);
-
-        // Create an SSLContext that uses our TrustManager
-        SSLContext sslContext = SSLContext.getInstance("TLSV1.2");
-        sslContext.init(null, tmf.getTrustManagers(), null);
-
-        SSLSocketFactory sf = sslContext.getSocketFactory();
-
-        HurlStack hurlStack = new HurlStack(null, sf) {
-            @Override
-            protected HttpURLConnection createConnection(URL url) throws IOException {
-                //LogUtil.info(TAG, "Before createConnection");
-                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) super.createConnection(url);
-                //LogUtil.info(TAG, "After createConnection");
-                httpsURLConnection.setHostnameVerifier(new HostnameVerifier() {
-
-                    //@DebugLog
-                    @Override
-                    public boolean verify(String hostName, SSLSession sslSession) {
-                        String certificateDomainName = ((X509Certificate) ca).getSubjectDN().toString();
-                        //LogUtil.info(TAG, "Index : " + certificateDomainName.indexOf("CN=") + " Len : " + certificateDomainName.codePointCount(certificateDomainName.indexOf("CN="), certificateDomainName.indexOf(",")));
-                        String certificateName = certificateDomainName.substring(certificateDomainName.indexOf("CN="), certificateDomainName.codePointCount(certificateDomainName.indexOf("CN="), certificateDomainName.indexOf(",")));
-                        certificateName = certificateName.replace("CN=", "");
-                        //LogUtil.info(TAG, "hostName : " + hostName + " certificateName : " + certificateName);
-                        if (certificateName.isEmpty())
-                            return false;
-                        return certificateName.equals(hostName);
-                    }
-                });
-                return httpsURLConnection;
-            }
-        };
-
-        return new Volley().newRequestQueue(this, hurlStack);
-    }
 
 
     public void registro(View view) {

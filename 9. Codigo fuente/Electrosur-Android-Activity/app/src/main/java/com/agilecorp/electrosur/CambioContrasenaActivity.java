@@ -12,12 +12,15 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.net.ssl.SSLSocketFactory;
 
 public class CambioContrasenaActivity extends AppCompatActivity {
 
@@ -40,7 +43,9 @@ public class CambioContrasenaActivity extends AppCompatActivity {
         params.put("contrasena", tv_contrasena.getText().toString());
         params.put("usruniqueid", Singleton.getInstance().getUniqueId());
 
-        RequestQueue queue = Volley.newRequestQueue(this);
+        SSLSocketFactory sf = Singleton.getInstance().getSSL(getResources().openRawResource(R.raw.cet));
+        RequestQueue queue = Volley.newRequestQueue(this, new HurlStack(null, sf));
+
         String url = Singleton.getInstance().getUrl() + "api/cambiocontrasena";
         JSONObject jsonObj = new JSONObject(params);
 

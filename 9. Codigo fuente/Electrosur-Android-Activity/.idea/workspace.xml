@@ -14,6 +14,24 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5abf85de-8f20-4ea2-8fdc-c3b27bd0c165" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,6 +207,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="2120" y="110" key="#PSD" timestamp="1610552329779">
       <screen x="1920" y="0" width="1366" height="728" />
@@ -202,6 +231,10 @@
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state x="2408" y="70" key="#com.intellij.ide.util.MemberChooser/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1610553408707" />
+    <state x="2283" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611591581872">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state x="2283" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611591581872" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611100133399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -214,51 +247,51 @@
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state x="2401" y="110" key="AndroidProcessChooserDialog/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1610552299255" />
-    <state width="1010" height="647" key="DebuggerActiveHint" timestamp="1611100469500">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="898" height="571" key="DebuggerActiveHint" timestamp="1611593410641">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1010" height="647" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1611100469500" />
-    <state width="898" height="571" key="DebuggerActiveHint/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611061435774" />
-    <state width="1491" height="139" key="GridCell.Tab.0.bottom" timestamp="1611100385409">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="898" height="571" key="DebuggerActiveHint/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611593410641" />
+    <state width="1321" height="116" key="GridCell.Tab.0.bottom" timestamp="1611597522255">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611100385409" />
-    <state width="1321" height="117" key="GridCell.Tab.0.bottom/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.0.center" timestamp="1611100385409">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.0.bottom/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522255" />
+    <state width="1321" height="116" key="GridCell.Tab.0.center" timestamp="1611597522254">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611100385409" />
-    <state width="1321" height="117" key="GridCell.Tab.0.center/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.0.left" timestamp="1611100385408">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.0.center/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522254" />
+    <state width="1321" height="116" key="GridCell.Tab.0.left" timestamp="1611597522254">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611100385408" />
-    <state width="1321" height="117" key="GridCell.Tab.0.left/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.0.right" timestamp="1611100385409">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.0.left/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522254" />
+    <state width="1321" height="116" key="GridCell.Tab.0.right" timestamp="1611597522255">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611100385409" />
-    <state width="1321" height="117" key="GridCell.Tab.0.right/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.1.bottom" timestamp="1611100428372">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.0.right/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522255" />
+    <state width="1321" height="116" key="GridCell.Tab.1.bottom" timestamp="1611597522255">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611100428372" />
-    <state width="1321" height="117" key="GridCell.Tab.1.bottom/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.1.center" timestamp="1611100428372">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.1.bottom/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522255" />
+    <state width="1321" height="116" key="GridCell.Tab.1.center" timestamp="1611597522255">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611100428372" />
-    <state width="1321" height="117" key="GridCell.Tab.1.center/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.1.left" timestamp="1611100428372">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.1.center/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522255" />
+    <state width="1321" height="116" key="GridCell.Tab.1.left" timestamp="1611597522255">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611100428372" />
-    <state width="1321" height="117" key="GridCell.Tab.1.left/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
-    <state width="1491" height="139" key="GridCell.Tab.1.right" timestamp="1611100428372">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1321" height="116" key="GridCell.Tab.1.left/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522255" />
+    <state width="1321" height="116" key="GridCell.Tab.1.right" timestamp="1611597522255">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state width="1491" height="139" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611100428372" />
-    <state width="1321" height="117" key="GridCell.Tab.1.right/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611062662435" />
+    <state width="1321" height="116" key="GridCell.Tab.1.right/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611597522255" />
     <state x="2104" y="6" key="SettingsEditor" timestamp="1610980372677">
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
@@ -268,35 +301,29 @@
       <screen x="3286" y="0" width="1366" height="718" />
     </state>
     <state x="-2151" y="376" key="com.intellij.ide.util.TipDialog/-1366.0.1366.718/-2732.0.1366.728/0.0.1536.824@-2732.0.1366.728" timestamp="1604513767150" />
-    <state x="653" y="468" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1600.0.1600.860@0.0.1536.824" timestamp="1602546756781" />
     <state x="3718" y="167" key="com.intellij.ide.util.TipDialog/3286.0.1366.718/1920.0.1366.728/0.0.1536.824@0.0.1536.824" timestamp="1607696931331" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/PagarActivity.java</url>
-          <line>225</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/RegistroActivity.java</url>
-          <line>66</line>
+          <line>69</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/CambioContrasenaActivity.java</url>
-          <line>65</line>
+          <line>70</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/HistorialActivity.java</url>
-          <line>77</line>
+          <line>82</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/PagarActivity.java</url>
-          <line>88</line>
+          <line>95</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -306,13 +333,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/LoginActivity.java</url>
-          <line>172</line>
+          <line>177</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/LoginActivity.java</url>
-          <line>178</line>
+          <line>183</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/LoginActivity.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/agilecorp/electrosur/PagarActivity.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

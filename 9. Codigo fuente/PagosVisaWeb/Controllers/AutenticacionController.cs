@@ -106,6 +106,19 @@ namespace PagosVisaWeb.Controllers
                             HttpContext.Session.SetString("USRCorreoPrimario", usuario.UsrcorreoPrimario);
                             HttpContext.Session.SetString("USRNombre", usuario.Usrnombre + " " + usuario.UsrapellidoPaterno + " " + usuario.UsrapellidoMaterno);
                             HttpContext.Session.SetString("UsruniqueId", usuario.UsruniqueId.ToString());
+
+                            HttpContext.Session.SetString("UsrtipoDocumento", usuario.UsrtipoDocumento.ToString());
+                            HttpContext.Session.SetString("UsrnumeroDocumento", usuario.UsrnumeroDocumento.ToString());
+
+                            DateTime startTime = usuario.Usrcreado;
+                            DateTime endTime = DateTime.Now;
+                            TimeSpan span = endTime.Subtract(startTime);
+
+                            HttpContext.Session.SetString("UsrCreadoDias", span.Days.ToString());
+
+                            
+
+
                             return Redirect("/BuscarSuministro");
                         }
                         else

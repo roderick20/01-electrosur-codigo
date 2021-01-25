@@ -16,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.net.ssl.SSLSocketFactory;
 
 public class HistorialActivity extends AppCompatActivity {
 
@@ -62,7 +65,9 @@ public class HistorialActivity extends AppCompatActivity {
             case "Diciembre" : mes_numero = 12; break;
         }
 
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        SSLSocketFactory sf = Singleton.getInstance().getSSL(getResources().openRawResource(R.raw.cet));
+        RequestQueue queue = Volley.newRequestQueue(this, new HurlStack(null, sf));
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("usruniqueid", Singleton.getInstance().getUniqueId());
         params.put("anyo", tv_anyo.getText().toString());

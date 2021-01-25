@@ -350,9 +350,6 @@ namespace PagosVisaWeb.Controllers
             }
 
             String clientIp = _configuration["Datos:IpServidor"].ToString();
-            String valMDD = "9011";
-            String valMDD1 = "0105";
-            String valMDD2 = "0509";
 
             String TokenSession = "";
             string body =
@@ -361,9 +358,11 @@ namespace PagosVisaWeb.Controllers
                    "\"antifraud\":{" +
                        "\"clientIp\":\"" + clientIp + "\"," +
                        "\"merchantDefineData\":{" +
-                            "\"MDD1\":\"" + valMDD + "\"," +
-                            "\"MDD2\":\"" + valMDD1 + "\"," +
-                            "\"MDD3\":\"" + valMDD2 + "\"" +
+                            "\"MDD4\":\"" + HttpContext.Session.GetString("USRCorreoPrimario") + "\"," +
+                            "\"MDD21\":\"" + "0" + "\"," +
+                            "\"MDD32\":\"" + HttpContext.Session.GetString("UsrtipoDocumento") + "\"," +
+                            "\"MDD75\":\"" + HttpContext.Session.GetString("UsrnumeroDocumento") + "\"," +
+                            "\"MDD77\":\"" + HttpContext.Session.GetString("UsrCreadoDias") + "\"" +
                         "}" +
                     "}," +
                     "\"channel\":\"web\"," +

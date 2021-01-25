@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
 
         CertificateFactory cf = null;
         try {
-            cf = CertificateFactory.getInstance("X.509");
+            /*cf = CertificateFactory.getInstance("X.509");
 
             // Generate the certificate using the certificate file under res/raw/cert.cer
             InputStream caInput = new BufferedInputStream(getResources().openRawResource(R.raw.cet));
@@ -117,11 +117,11 @@ public class LoginActivity extends AppCompatActivity {
 
             // Create an SSLContext that uses our TrustManager
             SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, tmf.getTrustManagers(), null);
+            context.init(null, tmf.getTrustManagers(), null);*/
 
-            SSLSocketFactory sf = context.getSocketFactory();
+           // context.getSocketFactory();
 
-//------------------------------------------------------------------------------------------
+            SSLSocketFactory sf = Singleton.getInstance().getSSL(getResources().openRawResource(R.raw.cet));
             RequestQueue queue = Volley.newRequestQueue(this, new HurlStack(null, sf));
 
         //RequestQueue queue = Volley.newRequestQueue(this);
@@ -157,6 +157,11 @@ public class LoginActivity extends AppCompatActivity {
                                 Singleton.getInstance().setToken(jsonObject.getString("Token"));
                                 Singleton.getInstance().setName(jsonObject.getString("USRNombre"));
                                 Singleton.getInstance().setUniqueId(jsonObject.getString("UsruniqueId"));
+
+                                Singleton.getInstance().setUSRCorreoPrimario(jsonObject.getString("USRCorreoPrimario"));
+                                Singleton.getInstance().setUsrtipoDocumento(jsonObject.getString("UsrtipoDocumento"));
+                                Singleton.getInstance().setUsrnumeroDocumento(jsonObject.getString("UsrnumeroDocumento"));
+
                                 startActivity(intent);
                             }
                             else{
@@ -175,8 +180,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
             queue.add(jsonObjRequest);
-        } catch (IOException | KeyStoreException | NoSuchAlgorithmException | KeyManagementException | java.security.cert.CertificateException e) {
-            e.printStackTrace();
+        } catch (Exception ex ){//IOException | KeyStoreException | NoSuchAlgorithmException | KeyManagementException | java.security.cert.CertificateException e) {
+            ex.printStackTrace();
         }
     }
 

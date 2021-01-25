@@ -20,6 +20,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -30,6 +31,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+
+import javax.net.ssl.SSLSocketFactory;
 
 import lib.visanet.com.pe.visanetlib.VisaNet;
 import lib.visanet.com.pe.visanetlib.presentation.custom.VisaNetViewAuthorizationCustom;
@@ -56,7 +60,10 @@ public class PagarActivity extends AppCompatActivity {
                     return;
                 }
 
-                RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+
+
+                SSLSocketFactory sf = Singleton.getInstance().getSSL(getResources().openRawResource(R.raw.cet));
+                RequestQueue queue = Volley.newRequestQueue(getApplicationContext(), new HurlStack(null, sf));
 
                 JSONObject jsonObject = new JSONObject();
                 String jsonString = "";
@@ -169,12 +176,16 @@ public class PagarActivity extends AppCompatActivity {
                 data.put(VisaNet.VISANET_SHOW_AMOUNT, true);
                 data.put(VisaNet.VISANET_USER_TOKEN, "Pago electrosur");
 
+                final int min = 20;
+                final int max = 9999;
+                final int random = new Random().nextInt((max - min) + 1) + min;
+
                 HashMap<String, String> MDDdata = new HashMap<String, String>();
-                //MDDdata.put("4", "mail@electrosur.com.pe");
-                MDDdata.put("19", "LIM");
-                MDDdata.put("20", "AQP");
-                MDDdata.put("21", "AFKI345");
-                MDDdata.put("94", "ABC123DEF");
+                MDDdata.put("4", Singleton.getInstance().getUSRCorreoPrimario());
+                MDDdata.put("21", "0");
+                MDDdata.put("32", Singleton.getInstance().getUsrtipoDocumento());
+                MDDdata.put("75", Singleton.getInstance().getUsrnumeroDocumento());
+                MDDdata.put("77", String.valueOf(random));
                 data.put(VisaNet.VISANET_MDD, MDDdata);
 
                 data.put(VisaNet.VISANET_ENDPOINT_URL, Singleton.getInstance().VisaNetVISANETENDPOINTURL());

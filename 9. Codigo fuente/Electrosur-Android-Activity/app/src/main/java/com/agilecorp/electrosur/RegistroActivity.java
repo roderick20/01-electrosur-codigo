@@ -14,6 +14,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -22,6 +23,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.net.ssl.SSLSocketFactory;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -126,7 +129,9 @@ public class RegistroActivity extends AppCompatActivity {
         params.put("numeroTelefono", tv_numeroTelefono.getText().toString());
         params.put("contrasena", tv_contrasena.getText().toString());
 
-        RequestQueue queue = Volley.newRequestQueue(this);
+        SSLSocketFactory sf = Singleton.getInstance().getSSL(getResources().openRawResource(R.raw.cet));
+        RequestQueue queue = Volley.newRequestQueue(this, new HurlStack(null, sf));
+
         String url = Singleton.getInstance().getUrl() + "api/registrarse";
         JSONObject jsonObj = new JSONObject(params);
 

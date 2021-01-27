@@ -183,8 +183,9 @@ public class PagarActivity extends AppCompatActivity {
                 HashMap<String, String> MDDdata = new HashMap<String, String>();
                 MDDdata.put("4", Singleton.getInstance().getUSRCorreoPrimario());
                 MDDdata.put("21", "0");
-                MDDdata.put("32", Singleton.getInstance().getUsrtipoDocumento());
-                MDDdata.put("75", Singleton.getInstance().getUsrnumeroDocumento());
+                MDDdata.put("32", Singleton.getInstance().getUsrnumeroDocumento());
+                MDDdata.put("63", Singleton.getInstance().getUsrtipoDocumento());
+                MDDdata.put("75", "registrado");
                 MDDdata.put("77", String.valueOf(random));
                 data.put(VisaNet.VISANET_MDD, MDDdata);
 
@@ -205,6 +206,9 @@ public class PagarActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //650119790 web
+        //650119719 app
 
 
     }

@@ -217,12 +217,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2120" y="110" key="#PSD" timestamp="1610552329779">
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state x="2120" y="110" key="#PSD/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1610552329779" />
+    <state x="1920" y="0" key="#app" timestamp="1611764501512">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state x="1920" y="0" key="#app/3286.0.1366.718/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1611764501512" />
     <state x="2334" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610556076306">
       <screen x="1920" y="0" width="1366" height="728" />
     </state>

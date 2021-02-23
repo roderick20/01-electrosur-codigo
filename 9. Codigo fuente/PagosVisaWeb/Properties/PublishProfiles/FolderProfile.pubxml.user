@@ -4,6 +4,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\01-electrosur-codigo\9. Codigo fuente\Publicado\web</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\PagosVISA</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

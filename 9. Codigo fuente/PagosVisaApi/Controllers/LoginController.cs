@@ -51,8 +51,7 @@ namespace Electrosur.Controllers
             {
                 user.Password = PasswordHash.GetMd5Hash(user.Password);
 
-                var usuario = _context.PdpUsrtUsuarioDelSistema
-                .Where(m => m.UsrcorreoPrimario == user.UserName &&
+                var usuario = _context.PdpUsrtUsuarioDelSistema.Where(m => m.UsrcorreoPrimario == user.UserName &&
                        m.Usrcontrasena == user.Password).FirstOrDefault();
 
                 if (usuario != null)
@@ -65,12 +64,9 @@ namespace Electrosur.Controllers
                         responseLogin.Token = tokenString;
                         responseLogin.USRNombre = usuario.Usrnombre + " " + usuario.UsrapellidoPaterno + " " + usuario.UsrapellidoMaterno;
                         responseLogin.UsruniqueId = usuario.UsruniqueId.ToString();
-                        responseLogin.USRidUsuario = usuario.UsridUsuario.ToString();
-                        responseLogin.USRCorreoPrimario = usuario.UsrcorreoPrimario;
-                        responseLogin.UsrtipoDocumento = usuario.UsrtipoDocumento.ToString();
-                        responseLogin.UsrnumeroDocumento = usuario.UsrnumeroDocumento.ToString();
 
                         String d1 = JsonSerializer.Serialize(responseLogin);
+
                         response = Ok(new
                         {
                             Estado = "OK",

@@ -350,7 +350,7 @@ namespace PagosVisaWeb.Controllers
             }
 
             String clientIp = _configuration["Datos:IpServidor"].ToString();
-
+            
             String TokenSession = "";
             string body =
                  "{" +
@@ -360,8 +360,9 @@ namespace PagosVisaWeb.Controllers
                        "\"merchantDefineData\":{" +
                             "\"MDD4\":\"" + HttpContext.Session.GetString("USRCorreoPrimario") + "\"," +
                             "\"MDD21\":\"" + "0" + "\"," +
-                            "\"MDD32\":\"" + HttpContext.Session.GetString("UsrtipoDocumento") + "\"," +
-                            "\"MDD75\":\"" + HttpContext.Session.GetString("UsrnumeroDocumento") + "\"," +
+                            "\"MDD32\":\"" + HttpContext.Session.GetString("UsrnumeroDocumento") + "\"," +
+                            "\"MDD63\":\"" + HttpContext.Session.GetString("UsrtipoDocumento") + "\"," +
+                            "\"MDD75\":\"registrado\"," +
                             "\"MDD77\":\"" + HttpContext.Session.GetString("UsrCreadoDias") + "\"" +
                         "}" +
                     "}," +

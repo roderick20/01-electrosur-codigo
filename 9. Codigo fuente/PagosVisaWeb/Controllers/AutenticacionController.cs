@@ -17,7 +17,7 @@ namespace PagosVisaWeb.Controllers
      * Este controlador lo usamos para todo lo es autenticación.
      * Programador: Rodercik Cusirramos Montesinos
      * Fecha de creacion: 22/06/2020
-     * Fecha de modificacion: 13/01/2021      
+     * Fecha de modificacion: 13/01/2021     
      * *****************************************************************************************/
 
     public class AutenticacionController : Controller
@@ -116,9 +116,6 @@ namespace PagosVisaWeb.Controllers
 
                             HttpContext.Session.SetString("UsrCreadoDias", span.Days.ToString());
 
-                            
-
-
                             return Redirect("/BuscarSuministro");
                         }
                         else
@@ -210,8 +207,8 @@ namespace PagosVisaWeb.Controllers
 
                     if (usuario != null)
                     {
-                        var Usrcontrasena = CreatePassword();// PasswordHash.GetMd5Hash(captchaCodeGenerado);
-                        usuario.Usrcontrasena = PasswordHash.GetMd5Hash(Usrcontrasena);
+                        var captchaCodeGenerado = Captcha.GenerateCaptchaCode();
+                        usuario.Usrcontrasena = PasswordHash.GetMd5Hash(captchaCodeGenerado);
                         usuario.Usrmodificado = DateTime.Now;
                         usuario.UsrultimoAcceso = DateTime.Now;
                         _context.Update(usuario);
@@ -221,7 +218,7 @@ namespace PagosVisaWeb.Controllers
 
                         var path = _env.WebRootPath + "/plantilla_email/recuperarcontrasena_email.html";
                         String fileContents = System.IO.File.ReadAllText(path);
-                        fileContents = fileContents.Replace("$$NuevaContrasena$$", Usrcontrasena);
+                        fileContents = fileContents.Replace("$$NuevaContrasena$$", captchaCodeGenerado);
 
                         SendEmailOutlook email_obj = new SendEmailOutlook(usuario.UsrcorreoPrimario, "Recuperar contraseña", fileContents, _env.WebRootPath);
                         email_obj.Send();
@@ -279,6 +276,7 @@ namespace PagosVisaWeb.Controllers
             return RedirectToAction("BuscarSuministro", "Pagos");
         }
 
+
         private bool ValidatePassword(string password, out string ErrorMessage)
         {
             var input = password;
@@ -326,7 +324,6 @@ namespace PagosVisaWeb.Controllers
                 return true;
             }
         }
-
 
         [Route("Registro")]
         public IActionResult Registro() => View();

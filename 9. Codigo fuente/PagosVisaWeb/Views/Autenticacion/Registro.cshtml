@@ -34,156 +34,132 @@
                             {
                 <h3>Su registro ha sido grabado en breve se le enviara un correo para la confirmación.</h3>
                                 <a href="https://pagos.electrosur.com.pe/" class="btn btn-primary btn-sm">Inicio</a> }
-                            else
-                            {
-                <div class="text-center w-75 m-auto">
-                    <img src="/images/logo-light.png" class="img-fluid" style="margin-bottom: 30px;">
-                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold" style="margin-bottom: 20px;">Registro</h4>
-                    <h6>Campos obligatorios (*)</h6>
-                </div>
-                <form asp-action="Registro" id="formRegistro">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <select asp-for="UsrtipoDocumento" class="form-control" required="">
-                                    <option disabled selected> (*) Tipo de Documento</option>
-                                    <option>DNI</option>
-                                    <option>RUC</option>
-                                    <option>Carnet Extranjeria</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input type="number" asp-for="UsrnumeroDocumento" class="form-control" required="" placeholder="(*) Número Documento" />
-                                <span id="errmsg" style="color: red;"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input asp-for="Usrnombre" class="form-control" required="" placeholder="(*) Nombres" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input asp-for="UsrapellidoPaterno" class="form-control" required="" placeholder="(*) Apellido parterno" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input asp-for="UsrapellidoMaterno" class="form-control" required="" placeholder="(*) Apellido materno">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" asp-for="UsrcorreoPrimario" class="form-control" required="" placeholder="(*) Correo institucional o principal" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" asp-for="UsrcorreoSecundario" class="form-control" placeholder="Correo secundario" />
-                    </div>
-                    <div class="form-group">
-                        <input asp-for="Usrtelefono" class="form-control" required="" placeholder="(*) Número de télefono o celular" />
-                    </div>
-                    <div class="form-group">
-
-
-                        <div class="input-group">
-                            <input type="password" asp-for="Usrcontrasena" class="form-control" placeholder="(*) Contraseña" />
-                            <div class="input-group-prepend">
-                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#bs-especificaciones-modal-lg"><i class="fas fa-lock"></i> Especificaciones</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="bs-especificaciones-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="myLargeModalLabel">Especificaciones de la contraseña</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            else
+                                            {
+                                <div class="text-center w-75 m-auto">
+                                    <img src="/images/logo-light.png" class="img-fluid" style="margin-bottom: 30px;">
+                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold" style="margin-bottom: 20px;">Registro</h4>
+                                    <h6>Campos obligatorios (*)</h6>
                                 </div>
-                                <div class="modal-body">
-                                    <ul>
-                                        <li>
-                                            La contraseña debe contener al menos una letra minúscula.
-                                        </li>
-                                        <li>
-                                            La contraseña debe contener al menos una letra mayúscula.
-                                        </li>
-                                        <li>
-                                            La contraseña no debe tener menos de 8 ni más de 15 caracteres.
-                                        </li>
-                                        <li>
-                                            La contraseña debe contener al menos un valor numérico.
-                                        </li>
-                                        <li>
-                                            La contraseña debe contener al menos un carácter especial (!@@#$%^&*()_+=\[{\]};:<>|./?,-)
-                                        </li>
-                                    </ul>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <img id="img-captcha" src="get-captcha-image" />
-                            </div>
-                            <input type="text" class="form-control" placeholder="(*) Captcha Code" name="CaptchaCode" maxlength="4" />
-                            <div class="input-group-prepend">
-                                <span id="img-captcha-b" class="btn btn-primary"><i class="uil uil-sync"></i></span>
-                            </div>
-                        </div>
-                    </div>
+                                                <form asp-action="Registro" id="formRegistro">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <select asp-for="UsrtipoDocumento" class="form-control" required="">
+                                                                    <option disabled selected> (*) Tipo de Documento</option>
+                                                                    <option>DNI</option>
+                                                                    <option>RUC</option>
+                                                                    <option>Carnet Extranjeria</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <input type="number" asp-for="UsrnumeroDocumento" class="form-control" required="" placeholder="(*) Número Documento" />
+                                                                <span id="errmsg" style="color: red;"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <input asp-for="Usrnombre" class="form-control" required="" placeholder="(*) Nombres" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <input asp-for="UsrapellidoPaterno" class="form-control" required="" placeholder="(*) Apellido parterno" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <input asp-for="UsrapellidoMaterno" class="form-control" required="" placeholder="(*) Apellido materno">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" asp-for="UsrcorreoPrimario" class="form-control" required="" placeholder="(*) Correo institucional o principal" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" asp-for="UsrcorreoSecundario" class="form-control" placeholder="Correo secundario" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input asp-for="Usrtelefono" class="form-control" required="" placeholder="(*) Número de télefono o celular" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" asp-for="Usrcontrasena" class="form-control" placeholder="(*) Contraseña" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <img id="img-captcha" src="get-captcha-image" />
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="(*) Captcha Code" name="CaptchaCode" maxlength="4" />
+                                                            <div class="input-group-prepend">
+                                                                <span id="img-captcha-b" class="btn btn-primary"><i class="uil uil-sync"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#bs-example-modal-lg"><i class="uil uil-bookmark"></i> Terminos y Condiciones</button>
-                            <div class="modal fade" id="bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="myLargeModalLabel">Terminos y Condiciones</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div style="text-align:center;">
-                                                <h4>TÉRMINOS Y CONDICIONES </h4>
-                                                <h4>USO DE LA PLATAFORMA WEB Y APP PARA COBRANZA DE RECIBOS MEDIANTE TARJETAS DE CRÉDITO/DEBITO</h4>
-                                            </div>
-                                            <p><b>ACERCA DEL USO DE LA PLATAFORMA.</b></p>
-                                            <p style="text-align:justify;">1. Al  hacer  uso  de  esta  plataforma,  el  usuario  acepta  y  por  lo  tanto  autoriza  que  la información sea guardada en nuestros servidores, información la cual será únicamente para  el  uso  que  el  usuario  de estaplataforma  requiera  de  manera  expresa,  ya  sea  por medio de esta uotros canales de atención.</p>
-                                            <p style="text-align:justify;">2. En  caso  que  el  usuario  desee  eliminar  su  información  deberá  de  comunicarlo  de manera escrita y por mesa de partes.</p>
-                                            <p style="text-align:justify;">3. Para  cualquier  consulta  adicional  por  favor  llame  anuestra  Central  Telefónica  de FONOSUR 52-583316.</p>
-                                            <p><b>ACERCA DE LOS MEDIOS DE PAGO.</b></p>
-                                            <p style="text-align:justify;">4. Actualmente solo se permite el pago por medio de tarjetas de crédito y/o debito de marca VISA, MasterCard.</p>
-                                            <p style="text-align:justify;">5. En  caso  de  extornos,  estos  deberán  ser  comunicados  el  mismo  día  de  efectuada  la operación,  dentro  del horario  de  Atención  al  Cliente  del  Comercio.  No  se  aceptan extornos posteriores a la fecha de pago.</p>
-                                            <p style="text-align:justify;">6. En caso de requerir otros medios de pago, por favor llamar al Servicio de Cobranza al 52-583316.</p>
-                                            <p style="text-align:justify;">7. El  cliente  podrá  cancelar  la  deuda  del  mes  anterior  que  aún  no  haya  vencido.  Al momento del pago, el sistema mostrarálas facturaciones que puede cancelar.</p>
-                                            <p style="text-align:justify;">8. El cliente no asumirá ningún costo de comisión del servicio por parte del Comercio.</p>
-                                            <p style="text-align:justify;">9. El  cliente  puede  presentar  reclamo  por  el  servicio  de  acuerdo  al  procedimiento  de reclamos del Comercio.</p>
-                                            <p style="text-align:justify;">10. El mecanismo de pago a través del uso de tarjetas de crédito/débito es facultativo aelección del cliente”</p>
-                                            <p><b>GENERALES.</b></p>
-                                            <p style="text-align:justify;">10. Estas condiciones pueden cambiar sinprevio aviso y estarán publicadas en la página web institucional.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#bs-example-modal-lg"><i class="uil uil-bookmark"></i> Terminos y Condiciones</button>
+                                                            <div class="modal fade" id="bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title" id="myLargeModalLabel">Terminos y Condiciones</h4>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div style="text-align:center;">
+                                                                                <h4>TÉRMINOS Y CONDICIONES </h4>
+                                                                                <h4>USO DE LA PLATAFORMA WEB Y APP PARA COBRANZA DE RECIBOS MEDIANTE TARJETAS DE CRÉDITO/DEBITO</h4>
+                                                                            </div>
+                                                                            <p><b>ACERCA DEL USO DE LA PLATAFORMA.</b></p>
+                                                                            <p style="text-align:justify;">1. Al hacer uso de esta plataforma, el usuario acepta y por lo tanto autoriza que la información sea guardada en nuestros servidores, información la cual será únicamente para el uso que el usuario de esta plataforma requiera de manera expresa, ya sea por medio de esta u otros canales de atención.</p>
+                                                                            <p style="text-align:justify;">2. En caso de que el usuario desee eliminar su información deberá de comunicarlo de manera escrita y por mesa de partes de ELECTROSUR.</p>
+                                                                            <p style="text-align:justify;">3. Para cualquier consulta adicional por favor llame nuestra Central Telefónica de FONOSUR 52-583316(Tacna), 53-584161 (Moquegua), 53-584162 (Ilo). </p>
+                                                                            <p><b>ACERCA DE LOS MEDIOS DE PAGO.</b></p>
+                                                                            <p style="text-align:justify;">4. Actualmente solo se permite el pago por medio de tarjetas de crédito y/o debito de marca VISA, MasterCard.</p>
+                                                                            <p style="text-align:justify;">5. En caso de extornos, estos deberán ser comunicados el mismo día de efectuada la operación, dentro del horario de Atención al Cliente de ELECTROSUR. No se aceptan extornos posteriores a la fecha de pago.</p>
+                                                                            <p style="text-align:justify;">6. En caso de requerir otros medios de pago, por favor llamar a la Central Telefónica de FONOSUR 52-583316(Tacna), 53-584161 (Moquegua), 53-584162 (Ilo).</p>
+                                                                            <p style="text-align:justify;">7. El cliente no asumirá ningún costo de comisión del servicio por parte de ELECTROSUR.</p>
+                                                                            <p style="text-align:justify;">8. El cliente puede presentar reclamo por el servicio de acuerdo al procedimiento de reclamos de ELECTROSUR.</p>
+                                                                            <p style="text-align:justify;">9. El mecanismo de pago a través del uso de tarjetas de crédito/débito es facultativo a elección del cliente.</p>
+                                                                            <p style="text-align:justify;">10. El uso, las condiciones de pago y otras condiciones aplicables a las tarjetas de crédito, son de exclusiva responsabilidad de la entidad financiera emisora de su tarjeta.</p>
+                                                                            <p><b>DELIMITACION DE RESPONSABILIDADES.</b></p>
+                                                                            <p style="text-align:justify;">11. ELECTROSUR S.A. no se hará responsable por daños y perjuicios frente a los usuarios como consecuencia directa o indirecta de la interrupción, suspensión o finalización de los servicios ofrecidos a través de esta pasarela de pagos, siendo esto responsabilidad de la entidad financiera emisora de la tarjeta.</p>
+                                                                            <p style="text-align:justify;">12. ELECTROSUR S.A., no se hará responsable por los errores que cometa el usuario en el registro de los datos solicitados para el pago de los servicios en esta plataforma virtual, asimismo, antes de proceder con el pago, el usuario tiene el deber de verificar que toda la información registrada sea la correcta.</p>
 
-                        </div>
-                        <div class="col-12">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="checkbox-signin" required>
-                                <label class="custom-control-label" for="checkbox-signin">Estoy de acuerdo con los Terminos y Condiciones</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-3 text-center">
-                        <button class="btn btn-primary"> <i class="uil uil-check"></i> Registrarse </button>
-                    </div>
-                </form>}
+                                                                            <p><b>CONSULTAS Y/O RECLAMOS.</b></p>
+                                                                            <p style="text-align:justify;">13. Para cualquier consulta relacionada a la operatividad o uso de esta pasarela de pagos, deberá hacerla llegar a nuestra Central Telefónica de FONOSUR 52-583316(Tacna), 53-584161 (Moquegua), 53-584162 (Ilo).</p>
+                                                                            <p style="text-align:justify;">14. Los reclamos y/o quejas, relacionadas al no reconocimiento del trámite o errores en los datos consignados para el pago, deberán ser presentados por el trámite correspondiente en Mesa de Partes física o virtual de ELECTROSUR.</p>
+                                                                            <p style="text-align:justify;">15. Los reclamos relacionados al rechazo o denegatoria de una transacción efectuada o al no reconocimiento de los pagos en línea con tarjetas de crédito/débito, deberán ser presentadas por los usuarios titulares ante las entidades financieras emisoras de estas tarjetas de crédito/débito en las oficinas de atención correspondientes. En conclusión, de encontrarse el usuario (titular de la tarjeta) ante una contingencia respecto al pago efectuado en el Aplicativo web o app móvil para pagos con tarjeta VISA de recibos de energía, deberá presentar su reclamo en la empresa del sistema financiero, indicando las transacciones que no reconoce en su tarjeta, debiendo proporcionar la información que la empresa del sistema financiero le solicite y seguir el procedimiento que ésta le indique. Finalmente, y a mayor abundamiento, los titulares de la tarjeta no asumirán responsabilidad por las transacciones no autorizadas que se hayan realizado con posterioridad a la comunicación del robo o extravío. Sin embargo, las que se realicen con anterioridad a dicha comunicación, serán de responsabilidad exclusiva de los titulares o usuarios. </p>
+
+
+
+                                                                            <p><b>GENERALES.</b></p>
+                                                                            <p style="text-align:justify;">16. Estas condiciones pueden cambiar sin previo aviso y estarán publicadas en la página web institucional de ELECTROSUR.</p>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="checkbox-signin" required>
+                                                                <label class="custom-control-label" for="checkbox-signin">Estoy de acuerdo con los Terminos y Condiciones</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-3 text-center">
+                                                        <button class="btn btn-primary"> <i class="uil uil-check"></i> Registrarse </button>
+                                                    </div>
+                                                </form>}
                         </div>
                     </div>
                 </div>
